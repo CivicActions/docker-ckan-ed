@@ -17,6 +17,8 @@ RUN echo 'Installing extensions' && \
     pip install -r https://raw.githubusercontent.com/ckan/ckanext-googleanalytics/master/requirements.txt && \
     # showcase
     pip install -e git+https://github.com/ckan/ckanext-showcase.git#egg=ckanext-showcase && \
+    # pages
+    pip install -e git+https://github.com/ckan/ckanext-pages.git#egg=ckanext-pages && \
     # disqus
     pip install -e git+https://github.com/ckan/ckanext-disqus#egg=ckanext-disqus && \
     # hierarchy
