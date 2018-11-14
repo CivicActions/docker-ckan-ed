@@ -1,0 +1,22 @@
+diff --git a/ckan/controllers/package.py b/ckan/controllers/package.py
+index fb28d93aa..fc694f278 100644
+--- a/ckan/controllers/package.py
++++ b/ckan/controllers/package.py
+@@ -148,7 +148,7 @@ class PackageController(base.BaseController):
+         c.query_error = False
+         page = h.get_page_number(request.params)
+
+-        limit = int(config.get('ckan.datasets_per_page', 20))
++        limit = int(request.params.get('limit', config.get('ckan.datasets_per_page', 20)))
+
+         # most search operations should reset the page counter:
+         params_nopage = [(k, v) for k, v in request.params.items()
+@@ -210,7 +210,7 @@ class PackageController(base.BaseController):
+             search_extras = {}
+             fq = ''
+             for (param, value) in request.params.items():
+-                if param not in ['q', 'page', 'sort'] \
++                if param not in ['q', 'page', 'limit', 'sort'] \
+                         and len(value) and not param.startswith('_'):
+                     if not param.startswith('ext_'):
+                         c.fields.append((param, value))

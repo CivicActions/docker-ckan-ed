@@ -1,0 +1,13 @@
+diff --git a/ckan/controllers/group.py b/ckan/controllers/group.py
+index 6aa3d1f77..c9a16a25e 100644
+--- a/ckan/controllers/group.py
++++ b/ckan/controllers/group.py
+@@ -141,7 +141,7 @@ class GroupController(base.BaseController):
+         group_type = self._guess_group_type()
+
+         page = h.get_page_number(request.params) or 1
+-        items_per_page = 21
++        items_per_page = 1000  # show all
+
+         context = {'model': model, 'session': model.Session,
+                    'user': c.user, 'for_view': True,
