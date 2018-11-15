@@ -31,7 +31,7 @@ RUN echo 'Installing extensions' && \
     pip install -e git+https://github.com/okfn/ckanext-contact.git@lacounts-0.1#egg=ckanext-contact
 
 # Install project extension
-# RUN pip install -e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed
+RUN pip install -e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed
 
 # Apply patches
 # COPY patches ${APP_DIR}/patches
