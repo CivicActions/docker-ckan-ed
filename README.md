@@ -1,4 +1,4 @@
-# Docker Compose setup for the US Deparment of Education project
+# Docker Compose for the US Deparment of Education
 
 > This is intended just as a development setup. Don't push any production specific configuration or code, specially secrets.
 
