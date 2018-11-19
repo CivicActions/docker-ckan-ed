@@ -21,6 +21,9 @@ RUN echo 'Installing extensions' && \
     pip install -e git+https://github.com/ckan/ckanext-pages.git#egg=ckanext-pages && \
     # disqus
     pip install -e git+https://github.com/ckan/ckanext-disqus#egg=ckanext-disqus && \
+    # datajson
+    pip install -e git+https://github.com/okfn/ckanext-datajson.git@ed#egg=ckanext-datajson && \
+    pip install -r ${APP_DIR}/src/ckanext-datajson/requirements.txt && \
     # hierarchy
     pip install -e git+https://github.com/okfn/ckanext-hierarchy.git#egg=ckanext-hierarchy && \
     # geoview
