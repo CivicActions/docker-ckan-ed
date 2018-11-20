@@ -12,13 +12,16 @@ RUN echo 'Installing extensions' && \
     # scheming
     pip install -e git+https://github.com/ckan/ckanext-scheming.git#egg=ckanext-scheming && \
     pip install -r https://raw.githubusercontent.com/ckan/ckanext-scheming/master/requirements.txt && \
+    # harvest
+    pip install -e git+https://github.com/ckan/ckanext-harvest.git@v1.1.4#egg=ckanext-harvest && \
+    pip install -r https://raw.githubusercontent.com/ckan/ckanext-harvest/v1.1.4/pip-requirements.txt && \
     # googleanalytics
     pip install -e git+https://github.com/ckan/ckanext-googleanalytics.git#egg=ckanext-googleanalytics && \
     pip install -r https://raw.githubusercontent.com/ckan/ckanext-googleanalytics/master/requirements.txt && \
     # showcase
-    pip install -e git+https://github.com/ckan/ckanext-showcase.git#egg=ckanext-showcase && \
+    pip install -e git+https://github.com/keitaroinc/ckanext-showcase.git@ckan-2.8#egg=ckanext-showcase && \
     # pages
-    pip install -e git+https://github.com/ckan/ckanext-pages.git#egg=ckanext-pages && \
+    pip install -e git+https://github.com/keitaroinc/ckanext-pages.git@pages-ckan-2.8#egg=ckanext-pages && \
     # disqus
     pip install -e git+https://github.com/ckan/ckanext-disqus#egg=ckanext-disqus && \
     # datajson
