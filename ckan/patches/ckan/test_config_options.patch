@@ -19,13 +19,14 @@ diff --git a/ckan/config/environment.py b/ckan/config/environment.py
 index e9750d8..b5f2a54 100644
 --- a/ckan/config/environment.py
 +++ b/ckan/config/environment.py
-@@ -178,6 +178,21 @@ def update_config():
+@@ -178,6 +178,22 @@ def update_config():
          if from_env:
              config[option] = from_env
  
 +    # Override service URLs with test alternatives if running the tests
 +    if os.environ.get('CKAN_TESTING'):
 +        TEST_CONFIG_FROM_ENV_VARS = {
++            'ckan.site_id': 'TEST_CKAN_SITE_ID',
 +            'sqlalchemy.url': 'TEST_CKAN_SQLALCHEMY_URL',
 +            'ckan.datastore.write_url': 'TEST_CKAN_DATASTORE_WRITE_URL',
 +            'ckan.datastore.read_url': 'TEST_CKAN_DATASTORE_READ_URL',
