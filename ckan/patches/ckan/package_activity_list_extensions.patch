@@ -1,0 +1,13 @@
+diff --git a/ckan/logic/action/get.py b/ckan/logic/action/get.py
+index 302e6fa..66ca8de 100644
+--- a/ckan/logic/action/get.py
++++ b/ckan/logic/action/get.py
+@@ -2740,7 +2740,7 @@ def package_activity_list_html(context, data_dict):
+     :rtype: string
+ 
+     '''
+-    activity_stream = package_activity_list(context, data_dict)
++    activity_stream = logic.get_action('package_activity_list')(context, data_dict)
+     offset = int(data_dict.get('offset', 0))
+     extra_vars = {
+         'controller': 'package',
