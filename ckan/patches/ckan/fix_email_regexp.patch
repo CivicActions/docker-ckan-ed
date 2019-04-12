@@ -1,0 +1,58 @@
+diff --git a/ckan/logic/validators.py b/ckan/logic/validators.py
+index e1280847a..9505c7f8f 100644
+--- a/ckan/logic/validators.py
++++ b/ckan/logic/validators.py
+@@ -842,9 +842,10 @@ def empty_if_not_sysadmin(key, data, errors, context):
+     empty(key, data, errors, context)
+ 
+ #pattern from https://html.spec.whatwg.org/#e-mail-state-(type=email)
+-email_pattern = re.compile(r"^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9]"\
+-                       "(?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9]"\
+-                       "(?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
++email_pattern = re.compile(r"^(?!\.)(?!.*\.$)(?!.*?\.\.)"\
++                            "[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9]"\
++                            "(?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9]"\
++                            "(?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
+ 
+ 
+ def email_validator(value, context):
+diff --git a/ckan/tests/logic/test_validators.py b/ckan/tests/logic/test_validators.py
+index 4fb5f598a..0a7dd97ee 100644
+--- a/ckan/tests/logic/test_validators.py
++++ b/ckan/tests/logic/test_validators.py
+@@ -193,6 +193,35 @@ class TestValidators(object):
+                 return validators.name_validator(*args, **kwargs)
+             call_validator(invalid_value, context={})
+ 
++    def test_email_validator_with_invalid_value(selfs):
++        invalid_values = [
++            '..test...test..@example.com',
++            'test @example.com',
++            'test@ example.com',
++            'test..test@example.com',
++            'test.test...@example.com',
++            '...test@example.com',
++        ]
++
++        for invalid_value in invalid_values:
++            @raises_Invalid
++            def call_validator(*args, **kwargs):
++                return validators.email_validator(*args, **kwargs)
++            call_validator(invalid_value, context={})
++
++    def test_email_validator_with_valid_value(self):
++        valid_values = [
++            'text@example.com',
++            'test.this@example.com',
++            'test.this@server.example.com',
++        ]
++
++        for valid_value in valid_values:
++            @returns_arg
++            def call_validator(*args, **kwargs):
++                return validators.email_validator(*args, **kwargs)
++            call_validator(valid_value)
++
+     def test_name_validator_with_valid_value(self):
+         '''If given a valid string name_validator() should do nothing and
+         return the string.
