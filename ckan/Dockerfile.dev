@@ -3,7 +3,7 @@ FROM openknowledge/ckan-dev:2.8
 MAINTAINER Viderum <info@Viderum.com>
 
 # Install utilities
-RUN pip install ipdb ipdbplugin
+RUN pip install ipdb ipdbplugin python-gflags
 
 # Install any extensions needed by your CKAN instance
 # (Make sure to add the plugins to CKAN__PLUGINS in the .env file)
@@ -16,8 +16,11 @@ RUN echo 'Installing extensions' && \
     pip install -e git+https://github.com/ckan/ckanext-harvest.git@v1.1.4#egg=ckanext-harvest && \
     pip install -r https://raw.githubusercontent.com/ckan/ckanext-harvest/v1.1.4/pip-requirements.txt && \
     # googleanalytics
-    pip install -e git+https://github.com/ckan/ckanext-googleanalytics.git#egg=ckanext-googleanalytics && \
-    pip install -r https://raw.githubusercontent.com/ckan/ckanext-googleanalytics/master/requirements.txt && \
+    pip install -e git+https://github.com/zelima/ckanext-googleanalytics.git#egg=ckanext-googleanalytics && \
+    pip install -r https://raw.githubusercontent.com/zelima/ckanext-googleanalytics/master/requirements.txt && \
+    # GA-report
+    pip install -e git+https://github.com/CivicActions/ckanext-ga-report.git@v0.0.1#egg=ckanext-ga-report && \
+    pip install -r https://raw.githubusercontent.com/CivicActions/ckanext-ga-report/master/requirements.txt && \
     # showcase
     pip install -e git+https://github.com/keitaroinc/ckanext-showcase.git@ckan-2.8#egg=ckanext-showcase && \
     # pages
@@ -52,3 +55,5 @@ RUN for d in $APP_DIR/patches/*; do \
 COPY crontabs/* /etc/crontabs/
 COPY docker-entrypoint.d/* /docker-entrypoint.d/
 COPY supervisor.d/* /etc/supervisord.d/
+COPY token.dat $APP_DIR/token.dat
+COPY credentials.json $APP_DIR/credentials.json
