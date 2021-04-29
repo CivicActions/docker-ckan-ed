@@ -15,15 +15,16 @@ services:
     ports:
       - "0.0.0.0:5000:5000"
     volumes:
-      - ./src:/srv/app/src_extensions
       - ckan_storage:/var/lib/ckan
+      - ./src:/srv/app/src_extensions
 
   datapusher:
     container_name: datapusher
-    build:
-      context: datapusher/
+    image: keitaro/ckan-datapusher:0.0.17
     ports:
-      - "8800:8800"
+        - "8000:8000"
+    environment:
+        - DATAPUSHER_REWRITE_URL=http://ckan-dev:5000
 
   db:
     container_name: db

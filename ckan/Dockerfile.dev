@@ -1,48 +1,91 @@
-FROM openknowledge/ckan-dev:2.8
+FROM alpine:3.8
+ENV TZ UTC
 
-MAINTAINER Viderum <info@Viderum.com>
+# Set src dirs
+ENV SRC_DIR=/srv/app/src
+ENV PIP_SRC=${SRC_DIR}
+ENV APP_DIR=/srv/app
+ENV SRC_EXTENSIONS_DIR=/srv/app/src_extensions
 
-# Install utilities
-RUN pip install ipdb ipdbplugin python-gflags
+ENV CKAN__SITE_URL=http://ckan.local.com:5000
+ENV CKAN__PLUGINS envvars
+ENV CKAN_INI=/srv/app/development.ini
 
-# Install any extensions needed by your CKAN instance
-# (Make sure to add the plugins to CKAN__PLUGINS in the .env file)
-# TODO: pin when possible
-RUN echo 'Installing extensions' && \
-    # scheming
-    pip install -e git+https://github.com/ckan/ckanext-scheming.git#egg=ckanext-scheming && \
-    pip install -r https://raw.githubusercontent.com/ckan/ckanext-scheming/master/requirements.txt && \
-    # harvest
-    pip install -e git+https://github.com/ckan/ckanext-harvest.git@v1.1.4#egg=ckanext-harvest && \
-    pip install -r https://raw.githubusercontent.com/ckan/ckanext-harvest/v1.1.4/pip-requirements.txt && \
-    # googleanalytics
-    pip install -e git+https://github.com/zelima/ckanext-googleanalytics.git#egg=ckanext-googleanalytics && \
-    pip install -r https://raw.githubusercontent.com/zelima/ckanext-googleanalytics/master/requirements.txt && \
-    # GA-report
-    pip install -e git+https://github.com/CivicActions/ckanext-ga-report.git@v0.0.1#egg=ckanext-ga-report && \
-    pip install -r https://raw.githubusercontent.com/CivicActions/ckanext-ga-report/master/requirements.txt && \
-    # showcase
-    pip install -e git+https://github.com/keitaroinc/ckanext-showcase.git@ckan-2.8#egg=ckanext-showcase && \
-    # pages
-    pip install -e git+https://github.com/keitaroinc/ckanext-pages.git@pages-ckan-2.8#egg=ckanext-pages && \
-    # disqus
-    pip install -e git+https://github.com/ckan/ckanext-disqus#egg=ckanext-disqus && \
-    # datajson
-    pip install -e git+https://github.com/okfn/ckanext-datajson.git@ed#egg=ckanext-datajson && \
-    pip install -r ${APP_DIR}/src/ckanext-datajson/requirements.txt && \
-    # hierarchy
-    pip install -e git+https://github.com/okfn/ckanext-hierarchy.git#egg=ckanext-hierarchy && \
-    # geoview
-    pip install -e git+https://github.com/okfn/ckanext-geoview.git@#egg=ckanext-geoview && \
-    # pdfview
-    pip install -e git+https://github.com/okfn/ckanext-pdfview.git#egg=ckanext-pdfview  && \
-    # contact
-    pip install -e git+https://github.com/okfn/ckanext-contact.git@lacounts-0.1#egg=ckanext-contact
+WORKDIR ${SRC_DIR}
 
-# Install project extension
-RUN pip install -e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed
+# Packages to build CKAN requirements and plugins
+RUN apk add --no-cache tzdata \
+                        git \
+                        gettext \
+                        postgresql-client \
+                        python2 \
+                        apache2-utils \
+                        libxml2 \
+                        libxslt \
+                        musl-dev \
+                        py2-gevent \
+                        uwsgi \
+                        uwsgi-http \
+                        uwsgi-corerouter \
+                        uwsgi-python \
+                        uwsgi-gevent \
+                        libmagic \
+                        curl 
+
+RUN apk add --no-cache --virtual .build-deps \
+                                    postgresql-dev  \
+                                    gcc \
+                                    make \
+                                    g++ \
+                                    autoconf \
+                                    automake \
+                                    libtool \
+                                    python-dev \
+                                    libxml2-dev \
+                                    libxslt-dev \
+                                    linux-headers 
+
+RUN apk add --no-cache libffi-dev
+           
+RUN mkdir -p ${SRC_DIR} 
+
+RUN curl -o ${SRC_DIR}/get-pip.py https://bootstrap.pypa.io/pip/2.7/get-pip.py && \
+    python ${SRC_DIR}/get-pip.py pip==20.3.3 wheel==0.36.2 setuptools==44.1.1
+
+RUN rm -rf ${SRC_DIR}/get-pip.py
+
+COPY pip-freeze.txt ${APP_DIR}
+RUN pip install -r ${APP_DIR}/pip-freeze.txt
+
+RUN cd ${SRC_DIR}/ckan && cp who.ini ${APP_DIR}
+RUN paster --plugin=ckan make-config ckan ${CKAN_INI}
+
+# Create a local user and group to run the app
+RUN addgroup -g 92 -S ckan && \
+    adduser -u 92 -h /srv/app -H -D -S -G ckan ckan
+
+RUN mkdir -p /var/lib/ckan-ed
+RUN chown -R ckan:ckan /var/lib/ckan-ed
+
+ONBUILD RUN mkdir /docker-entrypoint.d
+COPY docker-entrypoint.d/* /docker-entrypoint.d/
+
+COPY setup/uwsgi.conf /srv/app
+COPY setup/prerun.py /srv/app
+
+RUN mkdir /etc/supervisord.d
+RUN mkdir /tmp/supervisord
+RUN chown -R ckan.ckan /tmp/supervisord
+RUN chown -R ckan.ckan /etc/supervisord.d
+
+COPY setup/supervisord.conf /etc
+COPY setup/supervisord.d/* /etc/supervisord.d/
+
+RUN chown -R ckan.ckan ${APP_DIR}
 
 # Apply patches
+RUN if [ -d "$APP_DIR/patches/ckan" ] ; then rm -rf $APP_DIR/patches/ckan ; fi
+
 COPY patches ${APP_DIR}/patches
 
 RUN for d in $APP_DIR/patches/*; do \
@@ -51,9 +94,15 @@ RUN for d in $APP_DIR/patches/*; do \
         done ; \
     done
 
-# Copy config files
-COPY crontabs/* /etc/crontabs/
-COPY docker-entrypoint.d/* /docker-entrypoint.d/
-COPY supervisor.d/* /etc/supervisord.d/
-COPY token.dat $APP_DIR/token.dat
-COPY credentials.json $APP_DIR/credentials.json
+
+EXPOSE 5000
+
+CMD ["/srv/app/start_ckan.sh"]
+
+RUN mkdir $SRC_EXTENSIONS_DIR
+RUN chown -R ckan.ckan ${SRC_EXTENSIONS_DIR}
+COPY setup/start_ckan_development.sh /srv/app
+
+CMD ["/srv/app/start_ckan_development.sh"]
+
+USER root
