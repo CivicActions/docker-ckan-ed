@@ -20,13 +20,19 @@ cachetools = "3.1.1"
 certifi = "2020.6.20"
 cffi = "1.14.5"
 chardet = "3.0.4"
+ckan = {rev = "aa1442cdea0d414a314285151d265b7f719bed81", git = "https://github.com/ckan/ckan.git"}
 ckan-datapackage-tools = "0.1.0"
 ckanapi = "4.5"
-need = "^0.1"
-to = "^0.3"
-repo = "^0.1.0"
-public = "^2020.12.3"
-ckanext-sentry = {git = "https://github.com/okfn/ckanext-sentry.git", rev = "d3b1d1cf1f975b3672891012e6c75e176497db8f"}
+ckanext-contact = {git = "https://github.com/okfn/ckanext-contact.git", rev = "344c83d1a67c622eee319c94f74672a48e301ebe"}
+ckanext-datajson = {git = "https://github.com/datopian/ckanext-datajson.git", rev = "16c99d59aad6698fcc9dae8964a1d89975181044"}
+ckanext-envvars = {git = "https://github.com/okfn/ckanext-envvars.git", rev = "8602376a92a77b4f2d41763b6823d041469fa08e"}
+ckanext-ga-report = {git = "https://github.com/CivicActions/ckanext-ga-report.git", rev = "1de4e65a02d939dacc2a48069afd926603619490"}
+ckanext-googleanalytics = {git = "https://github.com/datopian/ckanext-googleanalytics.git", rev = "cca00c9ede424bc9e804a9c7f342e106184dff38"}
+ckanext-harvest = {git = "https://github.com/ckan/ckanext-harvest.git", rev = "204b1f301a5cb21e459afca482c77f97e4ce3807"}
+ckanext-hierarchy = {git = "https://github.com/datopian/ckanext-hierarchy.git", rev = "bee0eb562eaea98060d26275940baf81a6e7e978"}
+ckanext-pages = {git = "https://github.com/keitaroinc/ckanext-pages.git", rev = "1f813456f457b6804e1f321e3e9ec61b4f9133dc"}
+ckanext-showcase = {git = "https://github.com/keitaroinc/ckanext-showcase.git", rev = "843f56ab1d21041e459038983cde6afc2d663597"}
+ckanext-usmetadata = {git = "https://github.com/ViderumGlobal/USMetadata", rev = "5a5d5e04d7c83b65f222298635faf4d22ee063e6"}
 ckantoolkit = "0.0.4"
 click = "7.1.2"
 contextlib2 = "0.6.0.post1"
@@ -165,6 +171,7 @@ Werkzeug = "0.14.1"
 wrapt = "1.12.1"
 xlrd = "2.0.1"
 "zope.interface" = "4.3.2"
+
 
 [tool.poetry.dev-dependencies]
 

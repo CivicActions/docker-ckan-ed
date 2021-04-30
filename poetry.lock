@@ -158,6 +158,20 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "ckan"
+version = "2.9.2"
+description = "CKAN Software"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.extras]
+dev = ["beautifulsoup4 (==4.9.1)", "coveralls", "docutils (==0.12)", "factory-boy (==2.12.0)", "Flask-DebugToolbar (==0.11.0)", "freezegun (==0.3.15)", "ipdb (==0.13.2)", "responses (==0.10.14)", "mock (==2.0.0)", "pycodestyle (==2.5.0)", "pip-tools (==5.1.2)", "pyfakefs (==3.2)", "Sphinx (==1.8.5)", "sphinx-rtd-theme (==0.4.3)", "cookiecutter (==1.7.0)", "pytest (==4.6.5)", "pytest-split-tests (==1.0.9)", "pytest-cov (==2.7.1)", "pytest-freezegun (==0.4.1)", "pytest-rerunfailures (==8.0)", "towncrier (==19.2.0)"]
+requirements = ["alembic (==1.0.0)", "babel (==2.7.0)", "beaker (==1.11.0)", "bleach (==3.1.4)", "certifi (==2019.11.28)", "chardet (==3.0.4)", "click (==7.1.2)", "decorator (==4.4.1)", "dominate (==2.4.0)", "fanstatic (==1.1)", "feedgen (==0.9.0)", "flask-babel (==1.0.0)", "flask-multistatic (==1.0)", "flask (==1.1.1)", "idna (==2.8)", "itsdangerous (==1.1.0)", "jinja2 (==2.10.1)", "PyJWT (==1.7.1)", "lxml (==4.4.2)", "mako (==1.1.0)", "markdown (==2.6.7)", "markupsafe (==1.1.1)", "nose (==1.3.7)", "passlib (==1.6.5)", "pastedeploy (==2.0.1)", "pathtools (==0.1.2)", "pbr (==5.4.4)", "polib (==1.0.7)", "psycopg2 (==2.8.2)", "pysolr (==3.6.0)", "python-dateutil (==2.8.1)", "python-editor (==1.0.4)", "python-magic (==0.4.15)", "pytz (==2016.7)", "pyutilib (==5.7.1)", "pyyaml (==5.3.1)", "redis (==3.3.11)", "repoze.lru (==0.7)", "repoze.who (==2.3)", "requests (==2.22.0)", "routes (==1.13)", "rq (==1.0)", "shutilwhich (==1.1.0)", "simplejson (==3.10.0)", "six (==1.13.0)", "sqlalchemy-migrate (==0.12.0)", "sqlalchemy (==1.3.5)", "sqlparse (==0.2.2)", "tempita (==0.5.2)", "tzlocal (==1.3)", "unicodecsv (==0.14.1)", "urllib3 (==1.25.8)", "watchdog (==0.10.2)", "webassets (==0.12.1)", "webencodings (==0.5.1)", "webob (==1.8.5)", "werkzeug[watchdog] (==1.0.0)", "zope.interface (==4.3.2)"]
+requirements-py2 = ["alembic (==1.0.0)", "babel (==2.7.0)", "beaker (==1.10.1)", "bleach (==3.1.4)", "certifi (==2019.3.9)", "chardet (==3.0.4)", "click (==7.1.2)", "decorator (==4.4.0)", "dominate (==2.4.0)", "fanstatic (==0.12)", "flask-babel (==0.11.2)", "Flask (==1.1.1)", "flask-multistatic (==1.0)", "feedgen (==0.9.0)", "formencode (==1.3.1)", "funcsigs (==1.0.2)", "future (==0.18.2)", "idna (==2.8)", "itsdangerous (==1.1.0)", "jinja2 (==2.10.1)", "PyJWT (==1.7.1)", "lxml (==4.4.2)", "mako (==1.0.9)", "markdown (==2.6.7)", "markupsafe (==1.1.1)", "nose (==1.3.7)", "passlib (==1.6.5)", "paste (==1.7.5.1)", "pastedeploy (==2.0.1)", "pastescript (==2.0.2)", "pbr (==5.2.0)", "polib (==1.0.7)", "psycopg2 (==2.8.2)", "pygments (==2.3.1)", "pylons (==0.9.7)", "pysolr (==3.6.0)", "python-dateutil (==2.8.0)", "python2-secrets (==1.0.5)", "python-editor (==1.0.4)", "python-magic (==0.4.15)", "python2-secrets (==1.0.5)", "pytz (==2016.7)", "PyUtilib (==5.7.1)", "pyyaml (==5.3.1)", "redis (==3.2.1)", "repoze.lru (==0.7)", "repoze.who-friendlyform (==1.0.8)", "repoze.who (==2.3)", "requests (==2.22.0)", "routes (==1.13)", "rq (==1.0)", "simplejson (==3.10.0)", "six (==1.12.0)", "sqlalchemy-migrate (==0.12.0)", "sqlalchemy (==1.3.5)", "sqlparse (==0.2.2)", "tempita (==0.5.2)", "tzlocal (==1.3)", "unicodecsv (==0.14.1)", "urllib3 (==1.25.8)", "watchdog (==0.10.2)", "webassets (==0.12.1)", "webencodings (==0.5.1)", "weberror (==0.13.1)", "webhelpers (==1.3)", "webob (==1.0.8)", "webtest (==1.4.3)", "werkzeug (==0.15.5)", "zope.interface (==4.3.2)"]
+setuptools = ["setuptools (==44.1.0)"]
+
+[[package]]
 name = "ckan-datapackage-tools"
 version = "0.1.0"
 description = "{{ DESCRIPTION }}"
@@ -188,22 +202,157 @@ simplejson = "*"
 six = ">=1.9,<2.0"
 
 [[package]]
-name = "ckanext-sentry"
-version = "0.0.2"
-description = "Sentry support for CKAN"
+name = "ckanext-contact"
+version = "0.1"
+description = "CKAN Extension providing Contact / Feedback form"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/okfn/ckanext-contact.git"
+reference = "344c83d1a67c622eee319c94f74672a48e301ebe"
+resolved_reference = "344c83d1a67c622eee319c94f74672a48e301ebe"
+
+[[package]]
+name = "ckanext-datajson"
+version = "0.5.1"
+description = "CKAN extension to generate /data.json"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/datopian/ckanext-datajson.git"
+reference = "16c99d59aad6698fcc9dae8964a1d89975181044"
+resolved_reference = "16c99d59aad6698fcc9dae8964a1d89975181044"
+
+[[package]]
+name = "ckanext-envvars"
+version = "0.0.1"
+description = "CKAN configuration settings available from env vars"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/okfn/ckanext-envvars.git"
+reference = "8602376a92a77b4f2d41763b6823d041469fa08e"
+resolved_reference = "8602376a92a77b4f2d41763b6823d041469fa08e"
+
+[[package]]
+name = "ckanext-ga-report"
+version = "0.1"
+description = ""
 category = "main"
 optional = false
 python-versions = "*"
 develop = false
 
 [package.dependencies]
-raven = "*"
+gdata = "*"
 
 [package.source]
 type = "git"
-url = "https://github.com/okfn/ckanext-sentry.git"
-reference = "d3b1d1cf1f975b3672891012e6c75e176497db8f"
-resolved_reference = "d3b1d1cf1f975b3672891012e6c75e176497db8f"
+url = "https://github.com/CivicActions/ckanext-ga-report.git"
+reference = "1de4e65a02d939dacc2a48069afd926603619490"
+resolved_reference = "1de4e65a02d939dacc2a48069afd926603619490"
+
+[[package]]
+name = "ckanext-googleanalytics"
+version = "0.1-ed-1"
+description = "Add GA tracking and reporting to CKAN instance"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/datopian/ckanext-googleanalytics.git"
+reference = "cca00c9ede424bc9e804a9c7f342e106184dff38"
+resolved_reference = "cca00c9ede424bc9e804a9c7f342e106184dff38"
+
+[[package]]
+name = "ckanext-harvest"
+version = "1.1.3"
+description = "Harvesting interface plugin for CKAN"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/ckan/ckanext-harvest.git"
+reference = "204b1f301a5cb21e459afca482c77f97e4ce3807"
+resolved_reference = "204b1f301a5cb21e459afca482c77f97e4ce3807"
+
+[[package]]
+name = "ckanext-hierarchy"
+version = "0.1.post1"
+description = "CKAN Organization hierarchy - templates and configuration"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/datopian/ckanext-hierarchy.git"
+reference = "bee0eb562eaea98060d26275940baf81a6e7e978"
+resolved_reference = "bee0eb562eaea98060d26275940baf81a6e7e978"
+
+[[package]]
+name = "ckanext-pages"
+version = "0.1"
+description = "Basic CMS extension for ckan"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/keitaroinc/ckanext-pages.git"
+reference = "1f813456f457b6804e1f321e3e9ec61b4f9133dc"
+resolved_reference = "1f813456f457b6804e1f321e3e9ec61b4f9133dc"
+
+[[package]]
+name = "ckanext-showcase"
+version = "1.0.3"
+description = "A ckan extension to showcase datasets in use"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/keitaroinc/ckanext-showcase.git"
+reference = "843f56ab1d21041e459038983cde6afc2d663597"
+resolved_reference = "843f56ab1d21041e459038983cde6afc2d663597"
+
+[[package]]
+name = "ckanext-usmetadata"
+version = "0.2.1"
+description = "US Metadata Plugin"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/ViderumGlobal/USMetadata"
+reference = "5a5d5e04d7c83b65f222298635faf4d22ee063e6"
+resolved_reference = "5a5d5e04d7c83b65f222298635faf4d22ee063e6"
 
 [[package]]
 name = "ckantoolkit"
@@ -228,17 +377,6 @@ description = "Cross-platform colored terminal text."
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[[package]]
-name = "configobj"
-version = "5.0.6"
-description = "Config file reading, writing and validation."
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-six = "*"
 
 [[package]]
 name = "contextlib2"
@@ -863,14 +1001,6 @@ fixtures = ">=3.0.0"
 pbr = ">=2.0.0,<2.1.0 || >2.1.0"
 
 [[package]]
-name = "need"
-version = "0.1"
-description = "NEED TO LEARN"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
 name = "nose"
 version = "1.3.7"
 description = "nose extends unittest to make testing easier"
@@ -1092,14 +1222,6 @@ python-versions = "*"
 name = "ptyprocess"
 version = "0.7.0"
 description = "Run a subprocess in a pseudo terminal"
-category = "main"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "public"
-version = "2020.12.3"
-description = "replace __all__ with @public.add decorator"
 category = "main"
 optional = false
 python-versions = "*"
@@ -1346,18 +1468,6 @@ description = "Python client for Redis key-value store"
 category = "main"
 optional = false
 python-versions = "*"
-
-[[package]]
-name = "repo"
-version = "0.1.0"
-description = "repo: handle complex repository workflow in a repeatable way"
-category = "main"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-configobj = "*"
-requests = "*"
 
 [[package]]
 name = "repoze.lru"
@@ -1610,14 +1720,6 @@ unittest2 = ">=1.0.0"
 
 [package.extras]
 test = ["testresources", "testscenarios", "unittest2 (>=1.1.0)"]
-
-[[package]]
-name = "to"
-version = "0.3"
-description = "A trainer for PyTorch"
-category = "main"
-optional = false
-python-versions = "*"
 
 [[package]]
 name = "toml"
@@ -1874,7 +1976,7 @@ testing = ["zope.event", "nose", "coverage"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^2.7"
-content-hash = "8d518808c1d84f0d45abc00ecc261c38a0627afe6db538e6d0c810a6d4a8791f"
+content-hash = "44af587b9412f39d6f347c91310e86d950a790c62316bf37b3e40732f3b801dc"
 
 [metadata.files]
 alabaster = [
@@ -1976,6 +2078,9 @@ chardet = [
     {file = "chardet-3.0.4-py2.py3-none-any.whl", hash = "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"},
     {file = "chardet-3.0.4.tar.gz", hash = "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"},
 ]
+ckan = [
+    {file = "ckan-2.9.2.tar.gz", hash = "sha256:5a368d1a8ee629a40f94852bc64a6a8db45ab2cecaee98da7eeae40337bd5ed6"},
+]
 ckan-datapackage-tools = [
     {file = "ckan-datapackage-tools-0.1.0.tar.gz", hash = "sha256:c85c31adc7ab417f9e7d5296fd9d5d124fbf4a4a20a58ee7652fd280aa10ba1a"},
     {file = "ckan_datapackage_tools-0.1.0-py2.py3-none-any.whl", hash = "sha256:35e38aad26315bebdc53b74de7d93376442ec127b0833c8a1303b7153dca56ed"},
@@ -1983,7 +2088,16 @@ ckan-datapackage-tools = [
 ckanapi = [
     {file = "ckanapi-4.5.tar.gz", hash = "sha256:7282865f26696e5b651ba02a8138db5fd6181ec24a7e9ee25d89ac0e988625be"},
 ]
-ckanext-sentry = []
+ckanext-contact = []
+ckanext-datajson = []
+ckanext-envvars = []
+ckanext-ga-report = []
+ckanext-googleanalytics = []
+ckanext-harvest = []
+ckanext-hierarchy = []
+ckanext-pages = []
+ckanext-showcase = []
+ckanext-usmetadata = []
 ckantoolkit = [
     {file = "ckantoolkit-0.0.4.tar.gz", hash = "sha256:b1a8a760006d240cb34a38aa00c0cb2d7b0d3ff821c19291cc255069fa7b70df"},
 ]
@@ -1994,9 +2108,6 @@ click = [
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
-]
-configobj = [
-    {file = "configobj-5.0.6.tar.gz", hash = "sha256:a2f5650770e1c87fb335af19a9b7eb73fc05ccf22144eb68db7d00cd2bcb0902"},
 ]
 contextlib2 = [
     {file = "contextlib2-0.6.0.post1-py2.py3-none-any.whl", hash = "sha256:3355078a159fbb44ee60ea80abd0d87b80b78c248643b49aa6d94673b413609b"},
@@ -2304,9 +2415,6 @@ mox3 = [
     {file = "mox3-0.28.0-py2.py3-none-any.whl", hash = "sha256:214172fced8cf5efe8ecc3570847c70752ae6109fc8672883e55eb63eaa5243a"},
     {file = "mox3-0.28.0.tar.gz", hash = "sha256:8094868e70f814b4a526ecc592365437bc93a7dd60341321344987b3e8dba49d"},
 ]
-need = [
-    {file = "need-0.1.zip", hash = "sha256:15739c3fd70e9b4401497fabe7be1860cf4cb221f56ee1925915ea40d57d7336"},
-]
 nose = [
     {file = "nose-1.3.7-py2-none-any.whl", hash = "sha256:dadcddc0aefbf99eea214e0f1232b94f2fa9bd98fa8353711dacb112bfcbbb2a"},
     {file = "nose-1.3.7-py3-none-any.whl", hash = "sha256:9ff7c6cc443f8c51994b34a667bbcf45afd6d945be7477b52e97516fd17c53ac"},
@@ -2434,9 +2542,6 @@ psycopg2 = [
 ptyprocess = [
     {file = "ptyprocess-0.7.0-py2.py3-none-any.whl", hash = "sha256:4b41f3967fce3af57cc7e94b888626c18bf37a083e3651ca8feeb66d492fef35"},
     {file = "ptyprocess-0.7.0.tar.gz", hash = "sha256:5c5d0a3b48ceee0b48485e0c26037c0acd7d29765ca3fbb5cb3831d347423220"},
-]
-public = [
-    {file = "public-2020.12.3.tar.gz", hash = "sha256:2919ef9037e2a2d2563f8431adaa09b6b129d5398d0a687e42f00593484a9aa2"},
 ]
 pyasn1 = [
     {file = "pyasn1-0.4.8-py2.4.egg", hash = "sha256:fec3e9d8e36808a28efb59b489e4528c10ad0f480e57dcc32b4de5c9d8c9fdf3"},
@@ -2568,9 +2673,6 @@ raven = [
 redis = [
     {file = "redis-2.10.1.tar.gz", hash = "sha256:644aaf429e666d2254143a6a02f3b1cca2806d0cd52bb130c8f879d3c8259d62"},
 ]
-repo = [
-    {file = "repo-0.1.0.tar.gz", hash = "sha256:8a63b627220c0dd5bff75b9dd0f9507adb413674701f00e11de53f553df4bec5"},
-]
 "repoze.lru" = [
     {file = "repoze.lru-0.7-py3-none-any.whl", hash = "sha256:f77bf0e1096ea445beadd35f3479c5cff2aa1efe604a133e67150bc8630a62ea"},
     {file = "repoze.lru-0.7.tar.gz", hash = "sha256:0429a75e19380e4ed50c0694e26ac8819b4ea7851ee1fc7583c8572db80aff77"},
@@ -2677,9 +2779,6 @@ tempita = [
 testtools = [
     {file = "testtools-2.4.0-py2.py3-none-any.whl", hash = "sha256:36ff4998177c7d32ffe5fed3d541cb9ee62618a3b8e745c55510698997774ba4"},
     {file = "testtools-2.4.0.tar.gz", hash = "sha256:64c974a6cca4385d05f4bbfa2deca1c39ce88ede31c3448bee86a7259a9a61c8"},
-]
-to = [
-    {file = "to-0.3.tar.gz", hash = "sha256:b51c951a04f0f7fa45cd99a871e0897e6a461e510b21860f145b95465544e51b"},
 ]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},

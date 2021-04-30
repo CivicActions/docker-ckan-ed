@@ -42,3 +42,6 @@ harvest-run:
 
 access-db:
 	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_DB) /bin/bash -c "psql -U ckan"
+
+cypress-tests:
+	cd src/ckanext-ed/tests && node test.js
