@@ -136,3 +136,4 @@ werkzeug==0.14.1
 win-unicode-console==0.5
 xlrd==2.0.1
 zope.interface==4.3.2
+#-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed

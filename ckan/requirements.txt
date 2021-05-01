@@ -96,3 +96,4 @@ webtest==1.4.3
 werkzeug==0.14.1
 xlrd==2.0.1
 zope.interface==4.3.2
+#-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed
