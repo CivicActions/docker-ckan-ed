@@ -28,6 +28,9 @@ setup:
 	docker-compose -f $(DOCKER_COMPOSE_YML) build
 	docker-compose -f $(DOCKER_COMPOSE_YML) up
 
+update-dependencies:
+	./ckan/freeze-requirements.sh
+
 search-index-rebuild:
 	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckan search-index rebuild
 
