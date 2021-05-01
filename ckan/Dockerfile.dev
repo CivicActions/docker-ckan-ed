@@ -54,8 +54,8 @@ RUN curl -o ${SRC_DIR}/get-pip.py https://bootstrap.pypa.io/pip/2.7/get-pip.py &
 
 RUN rm -rf ${SRC_DIR}/get-pip.py
 
-COPY pip-freeze.txt ${APP_DIR}
-RUN pip install -r ${APP_DIR}/pip-freeze.txt
+COPY dev-requirements.txt ${APP_DIR}
+RUN pip install -r ${APP_DIR}/dev-requirements.txt
 
 RUN cd ${SRC_DIR}/ckan && cp who.ini ${APP_DIR}
 RUN paster --plugin=ckan make-config ckan ${CKAN_INI}
