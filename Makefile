@@ -33,6 +33,7 @@ update-dependencies:
 
 freeze-dependencies:
 	docker-compose -f $(DOCKER_COMPOSE_YML) run --rm -T $(CKAN_CONTAINER) pip --quiet freeze > ckan/requirements-freeze.txt
+	echo "#-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed" >> ../ckan/requirements-freeze.txt
 
 search-index-rebuild:
 	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckan search-index rebuild
