@@ -1,0 +1,174 @@
+[tool.poetry]
+name = "docker-ckan-ed"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^2.7"
+
+ckan = {git = "https://github.com/ckan/ckan.git", tag = "ckan-2.8.2"}
+
+ckanext-contact = {git = "https://github.com/okfn/ckanext-contact.git", tag = "lacounts-0.1"}
+ckanext-datajson = {git = "https://github.com/datopian/ckanext-datajson.git", tag = "0.5.1"}
+ckanext-envvars = {git = "https://github.com/okfn/ckanext-envvars.git", rev = "8602376a92a77b4f2d41763b6823d041469fa08e"}
+ckanext-ga-report = {git = "https://github.com/CivicActions/ckanext-ga-report.git", rev = "1de4e65a02d939dacc2a48069afd926603619490"}
+ckanext-googleanalytics = {git = "https://github.com/datopian/ckanext-googleanalytics.git", branch = "ed-debug"}
+ckanext-harvest = {git = "https://github.com/ckan/ckanext-harvest.git", tag = "v1.1.4"}
+ckanext-hierarchy = {git = "https://github.com/datopian/ckanext-hierarchy.git", tag = "v0.1-1"}
+ckanext-pages = {git = "https://github.com/keitaroinc/ckanext-pages.git", branch = "pages-ckan-2.8"}
+ckanext-showcase = {git = "https://github.com/keitaroinc/ckanext-showcase.git", branch = "ckan-2.8"}
+ckanext-usmetadata = {git = "https://github.com/ViderumGlobal/USMetadata.git", rev = "5a5d5e04d7c83b65f222298635faf4d22ee063e6"}
+
+# CKAN core
+argparse = "1.4.0"
+Babel = "2.3.4"
+Beaker = "1.9.0"
+bleach = "2.1.3"
+certifi = "2020.12.5"
+cffi = "1.14.5"
+chardet = "3.0.4"
+click = "7.1.2"
+cryptography = "3.3.2"
+decorator = "4.2.1"
+enum34 = "1.1.10"
+et-xmlfile = "1.0.1"
+fanstatic = "0.12"
+Flask = "0.12.4"
+Flask-Babel = "0.11.2"
+FormEncode = "1.3.1"
+funcsigs = "1.0.2"
+html5lib = "1.0.1"
+httplib2 = "0.19.1"
+idna = "2.10"
+ipaddress = "1.0.23"
+itsdangerous = "0.24"
+Jinja2 = "2.8"
+Mako = "1.0.7"
+Markdown = "2.6.7"
+MarkupSafe = "1.0"
+nose = "1.3.7"
+ofs = "0.4.2"
+Pairtree = "0.7.1-T"
+passlib = "1.6.5"
+Paste = "1.7.5.1"
+PasteDeploy = "1.5.2"
+PasteScript = "2.0.2"
+pbr = "1.10.0"
+polib = "1.0.7"
+psycopg2 = "2.7.3.2"
+pycparser = "2.20"
+Pygments = "2.2.0"
+Pylons = "0.9.7"
+pyOpenSSL = "20.0.1"
+pyparsing = "2.4.7"
+pysolr = "3.6.0"
+python-dateutil = "2.8.1"
+python-magic = "0.4.15"
+pytz = "2020.1"
+"pyutilib.component.core" = "4.6.4"
+redis = "2.10.1"
+"repoze.lru" = "0.7"
+"repoze.who" = "2.3"
+"repoze.who-friendlyform" = "1.0.8"
+requests = "2.24.0"
+Routes = "1.13"
+rq = "0.6.0"
+simplejson = "3.10.0"
+six = "1.15.0"
+SQLAlchemy = "1.1.11"
+sqlalchemy-migrate = "0.10.0"
+sqlparse = "0.2.2"
+Tempita = "0.5.2"
+tzlocal = "1.3"
+unicodecsv = "0.14.1"
+urllib3 = "1.25.11"
+vdm = "0.14"
+webencodings = "0.5.1"
+WebError = "0.13.1"
+WebHelpers = "1.3"
+WebOb = "1.0.8"
+WebTest = "1.4.3"
+Werkzeug = "0.14.1"
+"zope.interface" = "4.3.2"
+
+# ckanext-datajson
+PyYAML = "5.4.1"
+rfc3987 = "1.3.8"
+jsonschema = "2.4.0"
+LEPL = "5.1.3"
+
+# ckanext-ed
+ckantoolkit = "0.0.4"
+jdcal = "1.4.1"
+openpyxl = "2.6.4"
+xlrd = "2.0.1"
+
+# ckanext-googleanalytics
+gdata = "2.0.18"
+google-api-python-client = "1.6.1"
+pyasn1 = "0.4.8"
+pyasn1-modules = "0.2.8"
+rsa = "4.5"
+oauth2client = "4.1.3"
+uritemplate = "3.0.1"
+
+# ckanext-harvest
+pika = "0.9.8"
+
+# ckanext-hierarchy
+future = "0.18.2"
+
+
+[tool.poetry.dev-dependencies]
+# CKAN core
+alabaster = "0.7.12"
+beautifulsoup4 = "4.5.1"
+Blinker = "1.4"
+colorama = "0.4.4"
+coverage = "5.5"
+coveralls = "1.11.1"
+docopt = "0.6.2"
+docutils = "0.17.1"
+factory-boy = "2.1.1"
+first = "2.0.2"
+Flask-DebugToolbar = "0.10.1"
+#httpretty==0.8.3 Unresolveable conflict--used for some tests
+imagesize = "1.2.0"
+mock = "2.0.0"
+packaging = "20.9"
+pycodestyle = "2.2.0"
+pip-tools = "1.7.0"
+pyfakefs = "3.2"
+snowballstemmer = "2.1.0"
+Sphinx = "1.7.1"
+sphinx-rtd-theme = "0.3.1"
+sphinxcontrib-websupport = "1.1.2"
+typing = "3.10.0.0"
+
+# Deeper debugging (ipdb)
+appnope = "0.1.2"
+"backports.functools-lru-cache" = "1.6.4"
+"backports.shutil-get-terminal-size" = "1.0.0"
+ipdb = "0.13.7"
+ipython = "5.10.0"
+ipython-genutils = "0.2.0"
+scandir = "1.10.0"
+pathlib2 = "2.3.5"
+pexpect = "4.8.0"
+pickleshare = "0.7.5"
+prompt-toolkit = "1.0.18"
+ptyprocess = "0.7.0"
+simplegeneric = "0.8.1"
+toml = "0.10.2"
+traitlets = "4.3.3"
+wcwidth = "0.2.5"
+win-unicode-console = "0.5"
+
+# Required in dev container
+supervisor = "4.2.2"
+
+
+[build-system]
+requires = ["poetry-core>=0.12"]
+build-backend = "poetry.core.masonry.api"
