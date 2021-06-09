@@ -5,7 +5,7 @@ bleach==2.1.3
 certifi==2020.12.5
 cffi==1.14.5
 chardet==3.0.4
--e git+https://github.com/ckan/ckan.git@aa1442cdea0d414a314285151d265b7f719bed81#egg=ckan
+-e git+https://github.com/ckan/ckan.git@e5105334fbdfd312412da4e05221ce0588dc2dfd#egg=ckan
 -e git+https://github.com/okfn/ckanext-contact.git@344c83d1a67c622eee319c94f74672a48e301ebe#egg=ckanext-contact
 -e git+https://github.com/datopian/ckanext-datajson.git@16c99d59aad6698fcc9dae8964a1d89975181044#egg=ckanext-datajson
 -e git+https://github.com/okfn/ckanext-envvars.git@8602376a92a77b4f2d41763b6823d041469fa08e#egg=ckanext-envvars

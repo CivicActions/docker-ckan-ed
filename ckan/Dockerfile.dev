@@ -1,4 +1,4 @@
-FROM alpine:3.8
+FROM ubuntu:18.04
 ENV TZ UTC
 
 # Set src dirs
@@ -14,38 +14,37 @@ ENV CKAN_INI=/srv/app/development.ini
 WORKDIR ${SRC_DIR}
 
 # Packages to build CKAN requirements and plugins
-RUN apk add --no-cache tzdata \
-                        git \
-                        gettext \
-                        postgresql-client \
-                        python2 \
-                        apache2-utils \
-                        libxml2 \
-                        libxslt \
-                        musl-dev \
-                        py2-gevent \
-                        uwsgi \
-                        uwsgi-http \
-                        uwsgi-corerouter \
-                        uwsgi-python \
-                        uwsgi-gevent \
-                        libmagic \
-                        curl 
+RUN apt-get update && apt-get install -q -y python-dev \
+        python-pip \
+        python-virtualenv \
+        python-wheel \
+        libpq-dev \
+        libxml2-dev \
+        libxslt-dev \
+        libgeos-dev \
+        libssl-dev \
+        libffi-dev \
+        postgresql-client \
+        build-essential \
+        git-core \
+        vim \
+        wget \
+        curl
 
-RUN apk add --no-cache --virtual .build-deps \
-                                    postgresql-dev  \
-                                    gcc \
-                                    make \
-                                    g++ \
-                                    autoconf \
-                                    automake \
-                                    libtool \
-                                    python-dev \
-                                    libxml2-dev \
-                                    libxslt-dev \
-                                    linux-headers 
-
-RUN apk add --no-cache libffi-dev
+#RUN apk add --no-cache --virtual .build-deps \
+#                                    postgresql-dev  \
+#                                    gcc \
+#                                    make \
+#                                    g++ \
+#                                    autoconf \
+#                                    automake \
+#                                    libtool \
+#                                    python-dev \
+#                                    libxml2-dev \
+#                                    libxslt-dev \
+#                                    linux-headers 
+#
+#RUN apk add --no-cache libffi-dev
            
 RUN mkdir -p ${SRC_DIR} 
 
@@ -61,11 +60,12 @@ RUN cd ${SRC_DIR}/ckan && cp who.ini ${APP_DIR}
 RUN paster --plugin=ckan make-config ckan ${CKAN_INI}
 
 # Create a local user and group to run the app
-RUN addgroup -g 92 -S ckan && \
-    adduser -u 92 -h /srv/app -H -D -S -G ckan ckan
+#RUN addgroup -g 92 -S ckan && \
+#    adduser -u 92 -h /srv/app -H -D -S -G ckan ckan
+RUN useradd -r -u 900 -m -c "ckan" -d /srv/app -s /bin/false ckan
 
-RUN mkdir -p /var/lib/ckan-ed
-RUN chown -R ckan:ckan /var/lib/ckan-ed
+RUN mkdir -p /var/lib/ckan
+RUN chown -R ckan:ckan /var/lib/ckan
 
 ONBUILD RUN mkdir /docker-entrypoint.d
 COPY docker-entrypoint.d/* /docker-entrypoint.d/
