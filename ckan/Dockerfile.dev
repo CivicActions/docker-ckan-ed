@@ -56,8 +56,8 @@ RUN rm -rf ${SRC_DIR}/get-pip.py
 
 COPY requirements-dev.txt ${APP_DIR}
 COPY requirements-noh.txt ${APP_DIR}
-RUN "pip" "install" "-r" "${APP_DIR}/requirements-dev.txt"
-RUN "pip" "install" "-r" "${APP_DIR}/requirements-noh.txt"
+RUN pip install -r ${APP_DIR}/requirements-dev.txt
+RUN pip install -r ${APP_DIR}/requirements-noh.txt
 
 RUN cd ${SRC_DIR}/ckan && cp who.ini ${APP_DIR}
 RUN paster --plugin=ckan make-config ckan ${CKAN_INI}
