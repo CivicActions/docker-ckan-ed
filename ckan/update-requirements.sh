@@ -24,8 +24,6 @@ PREFIX="-e git+https://github.com/"
 sed -i 's/ \@ /:/g' ../ckan/requirements-noh.tmp
 # Generate the required format
 for i in `cat ../ckan/requirements-noh.tmp`; do PKGNM=`echo $i | awk -F: '{print $1}'`; PKGDTL=`echo $i | awk -F/ '{print $4"/"$5}'`;echo "${PREFIX}${PKGDTL}#egg=${PKGNM}" >> ../ckan/requirements-noh.txt ; done
-# Add the final touch
-#sed -i 's/^git/\-e git/g' ../ckan/requirements-noh.txt
 
 # manually add ckanext-ed as a commented requirement for now
 echo "#-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed" >> ../ckan/requirements-noh.txt

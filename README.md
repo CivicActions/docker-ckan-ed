@@ -75,7 +75,10 @@ You will also need service account credentials to track GA events. Something lik
 When dependencies need to be added, updated, or removed, they should be handled with _poetry_ via `requirements/pyproject.toml`:
 
 1. Make your changes to `requirements/pyproject.toml`.
-2. Run `make update-dependencies` (this will update `requirements/poetry.lock` and generate new versions of `requirements.txt` and `requirements-dev.txt`).
-3. Commit `ckan/requirements.txt`, `ckan/requirements-dev.txt`, `requirements/pyproject.toml`, and `requirements/poetry.lock`.
+2. Run `make update-dependencies` (this will update `requirements/poetry.lock` and generate new versions of `requirements.txt`,
+`requirements-noh.txt`, and `requirements-dev.txt`).  The file `requirements.txt` will have all the hashable packages listed,
+and the file `requirements-noh.txt` will contain the packages that have no hashes.
+3. Commit `ckan/requirements.txt`, `ckan/requirements-noh.txt`, `ckan/requirements-dev.txt`, `requirements/pyproject.toml`, and `requirements/poetry.lock`.
 
 > **NOTE:** `make update-dependencies` and all _poetry_ commands **must** be run with a version of _poetry_ that's installed within a Python 2 environment.
+
