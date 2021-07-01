@@ -20,11 +20,10 @@ services:
 
   datapusher:
     container_name: datapusher
-    image: keitaro/ckan-datapusher:0.0.17
+    build:
+      context: datapusher/
     ports:
-        - "8000:8000"
-    environment:
-        - DATAPUSHER_REWRITE_URL=http://ckan-dev:5000
+      - "8800:8800"
 
   db:
     container_name: db
