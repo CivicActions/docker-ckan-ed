@@ -2,7 +2,6 @@
 
 # Updates poetry.lock and exports requirements to .txt files
 
-
 cd requirements
 
 echo "Running poetry lock ..."
@@ -16,16 +15,16 @@ poetry export --dev -vvv --format requirements.txt --output ../ckan/requirements
 grep -v https: ../ckan/requirements.tmp > ../ckan/requirements.txt
 grep -v https: ../ckan/requirements-dev.tmp > ../ckan/requirements-dev.txt
 
-#Run python code to parse the poetry.lock filr and output it in toml format as requirements/poetry-lock-dump.txt
+#Run python code to read the poetry.lock file and dump it in toml format as requirements/poetry-lock-dump.txt
 python3 ../ckan/parse-poetry-lock.py
 
 # Now create the requirements-noh.txt for editable sources with their commit hash
-# By parsing the toml formatted output
+# By parsing the toml formatted output poetry-lock-dump.txt
 
+# truncate output file
 > ../ckan/requirements-noh.txt
 for i in `grep https poetry-lock-dump.txt | awk -F/ '{print $4"/"$5}' | awk -F\. '{print $1}'`
   do
-    #TYP=`grep "https://github.com/${i}\." pyproject.toml | awk -F\, '{print $2}' | awk '{print $1}'`
     MYHASH=`grep -A3 "https://github.com/${i}\." poetry-lock-dump.txt | grep resolved_reference | awk -F\" '{print $2}'`
     echo "-e git+https://github.com/${i}.git@${MYHASH}#egg=${i}" >> ../ckan/requirements-noh.txt
   done
