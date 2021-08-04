@@ -30,7 +30,7 @@ for i in `grep https pyproject.toml | awk -F/ '{print $4"/"$5}' | awk -F\. '{pri
         MYHASH=${TYPVAL}
       ;;
       tag)
-        MYHASH=`curl https://api.github.com/repos/${i}/tags | grep -A4 ${TYPVAL} | grep sha | awk -F\" '{print $4}'`
+        MYHASH=`curl https://api.github.com/repos/${i}/tags?per_page=1000 | grep -A4 ${TYPVAL} | grep sha | awk -F\" '{print $4}'`
       ;;
       branch)
         MYHASH=`curl https://api.github.com/repos/${i}/branches/${TYPVAL} | head -6 | grep sha | awk -F\" '{print $4}'`
