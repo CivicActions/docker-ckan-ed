@@ -8,30 +8,41 @@ echo "Running poetry lock ..."
 poetry lock -vvv
 echo "Running poetry export ..."
 
-# Process to eliminate non-hashable editable sources #############################################
+###### Process to gather hashes for editable sources #############################################
 poetry export -vvv --format requirements.txt --output ../ckan/requirements.tmp
 poetry export --dev -vvv --format requirements.txt --output ../ckan/requirements-dev.tmp
 # Now extract the packages that require editable (non-hashed) source from the hashable packages
 grep -v https: ../ckan/requirements.tmp > ../ckan/requirements.txt
 grep -v https: ../ckan/requirements-dev.tmp > ../ckan/requirements-dev.txt
 
-#Run python code to read the poetry.lock file and dump it in toml format as requirements/poetry-lock-dump.txt
-python3 ../ckan/parse-poetry-lock.py
-
 # Now create the requirements-noh.txt for editable sources with their commit hash
-# By parsing the toml formatted output poetry-lock-dump.txt
 
 # truncate output file
 > ../ckan/requirements-noh.txt
-for i in `grep https poetry-lock-dump.txt | awk -F/ '{print $4"/"$5}' | awk -F\. '{print $1}'`
+# First get the list of editable sources
+for i in `grep https pyproject.toml | awk -F/ '{print $4"/"$5}' | awk -F\. '{print $1}'`
   do
-    MYHASH=`grep -A3 "https://github.com/${i}\." poetry-lock-dump.txt | grep resolved_reference | awk -F\" '{print $2}'`
+    # For each of the editable sources get the repo type and type-value
+    TYP=`grep https pyproject.toml | grep "${i}\." | awk -F\" '{print $3}' | awk '{print $2}'`
+    TYPVAL=`grep https pyproject.toml | grep "${i}\."| awk -F\" '{print $4}'`
+    case ${TYP} in
+      rev)
+        MYHASH=${TYPVAL}
+      ;;
+      tag)
+        MYHASH=`curl https://api.github.com/repos/${i}/tags | grep -A4 ${TYPVAL} | grep sha | awk -F\" '{print $4}'`
+      ;;
+      branch)
+        MYHASH=`curl https://api.github.com/repos/${i}/branches/${TYPVAL} | head -6 | grep sha | awk -F\" '{print $4}'`
+      ;;
+      default)
+    esac
     echo "-e git+https://github.com/${i}.git@${MYHASH}#egg=${i}" >> ../ckan/requirements-noh.txt
   done
 
 # Clean up
-rm -f ../ckan/requirements.tmp ../ckan/requirements-dev.tmp ../ckan/requirements-noh.tmp poetry-lock-dump.txt
-################################################### End of Non-Hashable editable items elimination
+rm -f ../ckan/requirements.tmp ../ckan/requirements-dev.tmp ../ckan/requirements-noh.tmp
+################################################### End of hash gathering for editable sourcces ######
 
 # manually add ckanext-ed as a commented requirement for now
 echo "#-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed" >> ../ckan/requirements-noh.txt
