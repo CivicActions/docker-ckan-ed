@@ -13,6 +13,7 @@ chardet==3.0.4
 -e git+https://github.com/ckan/ckan.git@e5105334fbdfd312412da4e05221ce0588dc2dfd#egg=ckan
 -e git+https://github.com/okfn/ckanext-contact.git@344c83d1a67c622eee319c94f74672a48e301ebe#egg=ckanext_contact
 -e git+https://github.com/datopian/ckanext-datajson.git@16c99d59aad6698fcc9dae8964a1d89975181044#egg=ckanext_datajson
+-e git+https://github.com/datopian/ckanext-deadoralive.git@e3637bc9f676ff740a23be92778272a6c50c7c1f#egg=ckanext_deadoralive
 -e git+https://github.com/okfn/ckanext-envvars.git@8602376a92a77b4f2d41763b6823d041469fa08e#egg=ckanext_envvars
 -e git+https://github.com/CivicActions/ckanext-ga-report.git@1de4e65a02d939dacc2a48069afd926603619490#egg=ckanext_ga_report
 -e git+https://github.com/datopian/ckanext-googleanalytics.git@cca00c9ede424bc9e804a9c7f342e106184dff38#egg=ckanext_googleanalytics
@@ -27,6 +28,7 @@ colorama==0.4.4
 coverage==5.5
 coveralls==1.11.1
 cryptography==3.3.2
+-e git+https://github.com/ckan/deadoralive.git@82eed6c73e17b9884476311a7a8fae9d2b379600#egg=deadoralive
 decorator==4.2.1
 docopt==0.6.2
 docutils==0.17.1
