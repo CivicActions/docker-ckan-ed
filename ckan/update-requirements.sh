@@ -37,7 +37,8 @@ for i in `grep https pyproject.toml | awk -F/ '{print $4"/"$5}' | awk -F\. '{pri
       ;;
       default)
     esac
-    echo "-e git+https://github.com/${i}.git@${MYHASH}#egg=${i}" >> ../ckan/requirements-noh.txt
+    PKG=`echo $i | awk -F/ '{print $2}'`
+    echo "-e git+https://github.com/${i}.git@${MYHASH}#egg=${PKG}" >> ../ckan/requirements-noh.txt
   done
 
 # Clean up
