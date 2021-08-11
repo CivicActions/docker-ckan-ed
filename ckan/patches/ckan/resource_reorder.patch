@@ -1,17 +1,17 @@
 diff --git a/ckan/public/base/javascript/modules/resource-reorder.js b/ckan/public/base/javascript/modules/resource-reorder.js
-index 789b123..02caf15 100644
+index 3489742..5426ffb 100644
 --- a/ckan/public/base/javascript/modules/resource-reorder.js
 +++ b/ckan/public/base/javascript/modules/resource-reorder.js
-@@ -4,7 +4,7 @@ this.ckan.module('resource-reorder', function($) {
-   return {
-     options: {
-       id: false,
--      labelText: 'Reorder resources'
-+      labelText: 'Reorder'
-     },
-     template: {
-       title: '<h1></h1>',
-@@ -110,9 +110,17 @@ this.ckan.module('resource-reorder', function($) {
+@@ -38,7 +38,7 @@ this.ckan.module('resource-reorder', function($) {
+     initialize: function() {
+       jQuery.proxyAll(this, /_on/);
+ 
+-      var labelText = this._('Reorder resources');
++      var labelText = this._('Reorder');
+       var helpText = this._('You can rearrange the resources by dragging them using the arrow icon. Drag the resource ' +
+         'to the right and place it to the desired location on the list. When you are done, click the "Save order" -button.');
+ 
+@@ -119,9 +119,17 @@ this.ckan.module('resource-reorder', function($) {
          module.html_saving.show();
          $('.save, .cancel', module.html_form_actions).addClass('disabled');
          var order = [];
@@ -30,4 +30,3 @@ index 789b123..02caf15 100644
          module.sandbox.client.call('POST', 'package_resource_reorder', {
            id: module.options.id,
            order: order
-
