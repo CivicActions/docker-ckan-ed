@@ -78,4 +78,4 @@ When dependencies need to be added, updated, or removed, they should be handled 
 2. Run `make update-dependencies` (this will update `requirements/poetry.lock` and generate new versions of `requirements.txt` and `requirements-dev.txt`).
 3. Commit `ckan/requirements.txt`, `ckan/requirements-dev.txt`, `requirements/pyproject.toml`, and `requirements/poetry.lock`.
 
-> **NOTE:** `make update-dependencies` and all _poetry_ commands **must** be run with `poetry==1.0.0` (earlier versions _might_ work—haven't been tested—but newer versions won't output CKAN extensions as dependencies in develop mode), installed within a Python 2 environment.
+> **NOTE:** `make update-dependencies` and all _poetry_ commands **should** be run with `poetry==1.0.0` (earlier versions _might_ work—haven't been tested—but newer versions won't output CKAN extensions as dependencies in develop mode), installed within a Python 2 environment.
