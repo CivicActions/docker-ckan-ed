@@ -7,7 +7,7 @@ authors = ["Your Name <you@example.com>"]
 [tool.poetry.dependencies]
 python = "^2.7"
 
-ckan = {git = "https://github.com/ckan/ckan.git", tag = "ckan-2.8.8"}
+ckan = {git = "https://github.com/CivicActions/ckan.git", tag = "ed-ckan-2.8.8"}
 
 ckanext-contact = {git = "https://github.com/okfn/ckanext-contact.git", tag = "lacounts-0.1"}
 ckanext-datajson = {git = "https://github.com/datopian/ckanext-datajson.git", tag = "0.5.1"}
@@ -20,6 +20,8 @@ ckanext-pages = {git = "https://github.com/keitaroinc/ckanext-pages.git", branch
 ckanext-showcase = {git = "https://github.com/keitaroinc/ckanext-showcase.git", branch = "ckan-2.8"}
 ckanext-usmetadata = {git = "https://github.com/ViderumGlobal/USMetadata.git", rev = "5a5d5e04d7c83b65f222298635faf4d22ee063e6"}
 ckanext-deadoralive = {git = "https://github.com/datopian/ckanext-deadoralive.git", rev = "e3637bc9f676ff740a23be92778272a6c50c7c1f"}
+ckanext-geoview = {git = "https://github.com/okfn/ckanext-geoview.git", tag = "lacounts-0.1"}
+ckanext-pdfview = {git = "https://github.com/okfn/ckanext-pdfview.git", tag = "lacounts-0.1"}
 deadoralive = {git = "https://github.com/ckan/deadoralive.git", rev = "82eed6c73e17b9884476311a7a8fae9d2b379600"}
 
 # CKAN core
