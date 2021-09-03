@@ -1,0 +1,32 @@
+diff --git a/ckan/views/admin.py b/ckan/views/admin.py
+index defd3850f..178b0fce5 100644
+--- a/ckan/views/admin.py
++++ b/ckan/views/admin.py
+@@ -162,6 +162,27 @@ class TrashView(MethodView):
+             if u'purge-packages' in request.form:
+                 revs_to_purge = []
+                 for pkg in self.deleted_packages:
++
++                    # Get all the package relationship revisions
++                    pkg_relationships = []
++                    subject_pkg_relationships = model.Session.query(
++                        model.package_relationship_revision_table).filter_by(
++                        subject_package_id=pkg.id)
++                    object_pkg_relationships = model.Session.query(
++                        model.package_relationship_revision_table).filter_by(
++                        object_package_id=pkg.id)
++                    pkg_relationships += [r.id for r in subject_pkg_relationships]
++                    pkg_relationships += [r.id for r in object_pkg_relationships]
++
++                    # Delete the relationships and relationship revisions
++                    for r in pkg_relationships:
++                        model.Session.execute(
++                            model.package_relationship_revision_table.delete()
++                            .where( model.package_relationship_revision_table.columns.id == r))
++                        model.Session.delete(model.Session.query(model.PackageRelationship).get(r))
++                        model.Session.commit()
++                        model.Session.flush()
++
+                     revisions = [x[0] for x in pkg.all_related_revisions]
+                     # ensure no accidental purging of other(non-deleted)
+                     # packages initially just avoided purging revisions
