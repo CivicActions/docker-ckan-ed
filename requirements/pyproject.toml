@@ -27,7 +27,7 @@ deadoralive = {git = "https://github.com/ckan/deadoralive.git", rev = "82eed6c73
 # CKAN core
 argparse = "1.4.0"
 Babel = "2.3.4"
-Beaker = "1.9.0"
+Beaker = "1.11.0"
 bleach = "2.1.3"
 certifi = "2020.12.5"
 cffi = "1.14.5"
