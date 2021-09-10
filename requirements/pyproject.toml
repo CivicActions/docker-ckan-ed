@@ -15,7 +15,6 @@ ckanext-envvars = {git = "https://github.com/okfn/ckanext-envvars.git", rev = "8
 ckanext-ga-report = {git = "https://github.com/CivicActions/ckanext-ga-report.git", rev = "1de4e65a02d939dacc2a48069afd926603619490"}
 ckanext-googleanalytics = {git = "https://github.com/datopian/ckanext-googleanalytics.git", branch = "ed-debug"}
 ckanext-harvest = {git = "https://github.com/ckan/ckanext-harvest.git", tag = "v1.1.4"}
-ckanext-hierarchy = {git = "https://github.com/datopian/ckanext-hierarchy.git", tag = "v0.1-1"}
 ckanext-pages = {git = "https://github.com/keitaroinc/ckanext-pages.git", branch = "pages-ckan-2.8"}
 ckanext-showcase = {git = "https://github.com/keitaroinc/ckanext-showcase.git", branch = "ckan-2.8"}
 ckanext-usmetadata = {git = "https://github.com/ViderumGlobal/USMetadata.git", rev = "5a5d5e04d7c83b65f222298635faf4d22ee063e6"}
@@ -103,6 +102,7 @@ jsonschema = "2.4.0"
 LEPL = "5.1.3"
 
 # ckanext-ed
+beautifulsoup4 = "4.5.1"
 ckantoolkit = "0.0.4"
 jdcal = "1.4.1"
 openpyxl = "2.6.4"
@@ -120,14 +120,10 @@ uritemplate = "3.0.1"
 # ckanext-harvest
 pika = "0.9.8"
 
-# ckanext-hierarchy
-future = "0.18.2"
-
 
 [tool.poetry.dev-dependencies]
 # CKAN core
 alabaster = "0.7.12"
-beautifulsoup4 = "4.5.1"
 Blinker = "1.4"
 colorama = "0.4.4"
 coverage = "5.5"
