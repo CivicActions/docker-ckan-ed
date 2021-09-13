@@ -18,7 +18,6 @@ chardet==3.0.4
 -e git+https://github.com/CivicActions/ckanext-ga-report.git@1de4e65a02d939dacc2a48069afd926603619490#egg=ckanext_ga_report
 -e git+https://github.com/datopian/ckanext-googleanalytics.git@cca00c9ede424bc9e804a9c7f342e106184dff38#egg=ckanext_googleanalytics
 -e git+https://github.com/ckan/ckanext-harvest.git@204b1f301a5cb21e459afca482c77f97e4ce3807#egg=ckanext_harvest
--e git+https://github.com/datopian/ckanext-hierarchy.git@bee0eb562eaea98060d26275940baf81a6e7e978#egg=ckanext_hierarchy
 -e git+https://github.com/keitaroinc/ckanext-pages.git@1f813456f457b6804e1f321e3e9ec61b4f9133dc#egg=ckanext_pages
 -e git+https://github.com/keitaroinc/ckanext-showcase.git@843f56ab1d21041e459038983cde6afc2d663597#egg=ckanext_showcase
 -e git+https://github.com/ViderumGlobal/USMetadata.git@5a5d5e04d7c83b65f222298635faf4d22ee063e6#egg=ckanext_usmetadata
@@ -42,7 +41,6 @@ Flask-Babel==0.11.2
 Flask-DebugToolbar==0.10.1
 FormEncode==1.3.1
 funcsigs==1.0.2
-future==0.18.2
 gdata==2.0.18
 gevent==1.2.2
 google-api-python-client==1.6.1
