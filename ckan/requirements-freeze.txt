@@ -80,7 +80,7 @@ pika==0.9.8
 pip-tools==1.7.0
 polib==1.0.7
 prompt-toolkit==1.0.18
-psycopg2==2.7.3.2
+psycopg2==2.8.4
 ptyprocess==0.7.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
@@ -114,7 +114,7 @@ snowballstemmer==2.1.0
 Sphinx==1.7.1
 sphinx-rtd-theme==0.3.1
 sphinxcontrib-websupport==1.1.2
-SQLAlchemy==1.1.11
+SQLAlchemy==1.2.19
 sqlalchemy-migrate==0.10.0
 sqlparse==0.2.2
 supervisor==4.2.2
@@ -126,7 +126,7 @@ tzlocal==1.3
 unicodecsv==0.14.1
 uritemplate==3.0.1
 urllib3==1.25.11
-vdm==0.14
+vdm==0.15
 wcwidth==0.2.5
 webencodings==0.5.1
 WebError==0.13.1
