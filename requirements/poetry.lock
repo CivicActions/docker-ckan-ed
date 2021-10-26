@@ -255,7 +255,7 @@ resolved_reference = "204b1f301a5cb21e459afca482c77f97e4ce3807"
 
 [[package]]
 name = "ckanext-pages"
-version = "0.1"
+version = "0.1.0"
 description = "Basic CMS extension for ckan"
 category = "main"
 optional = false
@@ -264,9 +264,9 @@ develop = false
 
 [package.source]
 type = "git"
-url = "https://github.com/keitaroinc/ckanext-pages.git"
-reference = "pages-ckan-2.8"
-resolved_reference = "1f813456f457b6804e1f321e3e9ec61b4f9133dc"
+url = "https://github.com/ckan/ckanext-pages.git"
+reference = "v0.2.0"
+resolved_reference = "8b4a97787e14e37a2251ed18431ce33c216b39b0"
 
 [[package]]
 name = "ckanext-pdfview"
@@ -1598,7 +1598,7 @@ testing = ["zope.event", "nose", "coverage"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^2.7"
-content-hash = "df6351b31c11b1ae8a07ff1f1b32eb62aff28ee50694e8e6bd05e150e1379e82"
+content-hash = "7938c77827fc40dc0baec8b9df183a2a0f255fb38221f25591bc4d89044b85e9"
 
 [metadata.files]
 alabaster = [
