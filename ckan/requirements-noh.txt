@@ -1,4 +1,4 @@
--e git+https://github.com/CivicActions/ckan.git@cb4b41cdebe0a9bee42f47fa07506364b4f2c000#egg=ckan
+-e git+https://github.com/CivicActions/ckan.git@ba0120dc0c798bbc9b6d8e9ad83db01a197ea179#egg=ckan
 -e git+https://github.com/okfn/ckanext-contact.git@344c83d1a67c622eee319c94f74672a48e301ebe#egg=ckanext-contact
 -e git+https://github.com/datopian/ckanext-datajson.git@16c99d59aad6698fcc9dae8964a1d89975181044#egg=ckanext-datajson
 -e git+https://github.com/okfn/ckanext-envvars.git@8602376a92a77b4f2d41763b6823d041469fa08e#egg=ckanext-envvars
