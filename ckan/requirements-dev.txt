@@ -357,9 +357,9 @@ pycparser==2.20; (python_version >= "2.7" and python_full_version < "3.0.0") or 
 pyfakefs==3.2 \
     --hash=sha256:4436cf3f02695a1bfa07a864d07b3336e8a18a0af4262bdbd7dc49ceb72624fa \
     --hash=sha256:c0e99db909645328dd0280974885885d829cd9402293ab7d0b4b74574476855d
-pygments==2.2.0 \
-    --hash=sha256:78f3f434bcc5d6ee09020f92ba487f95ba50f1e3ef83ae96b9d5ffa1bab25c5d \
-    --hash=sha256:dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc
+pygments==2.7.4 \
+    --hash=sha256:bc9591213a8f0e0ca1a5e68a479b4887fdc3e75d0774e5c71c31920c427de435 \
+    --hash=sha256:df49d09b498e83c1a73128295860250b0b7edd4c723a32e9bc0d295c7c2ec337
 pylons==0.9.7 \
     --hash=sha256:6eafd95a83b170951165580c0f6bab030fe2b4e84cbcc59c622780cb691a7a95 \
     --hash=sha256:36a62a184819ef01e65c865364f1b262299e6215ef55d8add6a1a258a9dd6933
