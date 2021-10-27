@@ -60,7 +60,6 @@ COPY common/supervisord.conf /etc
 COPY requirements-dev.txt ${APP_DIR}
 COPY requirements-noh.txt ${APP_DIR}
 COPY requirement-setuptools.txt ${APP_DIR}
-
 RUN pip2 install -r ${APP_DIR}/requirements-dev.txt
 RUN pip2 install -r ${APP_DIR}/requirements-noh.txt
 

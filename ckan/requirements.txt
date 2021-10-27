@@ -302,9 +302,6 @@ redis==3.2.1 \
 repoze.lru==0.7 \
     --hash=sha256:f77bf0e1096ea445beadd35f3479c5cff2aa1efe604a133e67150bc8630a62ea \
     --hash=sha256:0429a75e19380e4ed50c0694e26ac8819b4ea7851ee1fc7583c8572db80aff77
-repoze.who-friendlyform==1.0.8 \
-    --hash=sha256:77138a94b11e8f846889fd7e025d6914e5966125869f6d75ef216801e29cdf13 \
-    --hash=sha256:f923d56b71f26423dcf47cc3bc36eb6a1d1e95f124f9e66fff68264110ba4b3a
 repoze.who==2.3 \
     --hash=sha256:36216ea411e16967fa3c44c66975e55ee2e41aede3d2ef31fd3130b6f3880922 \
     --hash=sha256:bc38943b62e79df7971fcf40f2c6b17b6b626aef0f81717d7aaedc47ed94735b \
@@ -357,12 +354,13 @@ sqlparse==0.2.2 \
     --hash=sha256:9b61c319b3c7b64681e1b4d554a9c3fe81ed52da00a901ccf3fe72962734e444 \
     --hash=sha256:d446296b2c26f9466860dd85fa32480bec523ab96bda8879262c38e8e8fbba21
 tempita==0.5.2 \
+    --hash=sha256:f4554840cb59c6b4a5df4fad27eea4e3cb47ca7089bfeefb5890ff1bb8af2117 \
     --hash=sha256:cacecf0baa674d356641f1d406b8bff1d756d739c46b869a54de515d08e6fc9c
 tzlocal==1.3 \
     --hash=sha256:d160c2ce4f8b1831dabfe766bd844cf9012f766539cf84139c2faac5201882ce
 unicodecsv==0.14.1 \
     --hash=sha256:018c08037d48649a0412063ff4eda26eaa81eff1546dbffa51fa5293276ff7fc
-uritemplate==3.0.1; (python_version >= "2.7" and python_full_version < "3.0.0") or (python_full_version >= "3.4.0") \
+uritemplate==3.0.1 \
     --hash=sha256:07620c3f3f8eed1f12600845892b0e036a2420acf513c53f7de0abd911a5894f \
     --hash=sha256:5af8ad10cec94f215e3f48112de2022e1d5a37ed427fbd88652fa908f2ab7cae
 urllib3==1.25.8 \
