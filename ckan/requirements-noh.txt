@@ -6,7 +6,7 @@
 -e git+https://github.com/datopian/ckanext-googleanalytics.git@cca00c9ede424bc9e804a9c7f342e106184dff38#egg=ckanext-googleanalytics
 -e git+https://github.com/ckan/ckanext-harvest.git@204b1f301a5cb21e459afca482c77f97e4ce3807#egg=ckanext-harvest
 -e git+https://github.com/ckan/ckanext-pages.git@8b4a97787e14e37a2251ed18431ce33c216b39b0#egg=ckanext-pages
--e git+https://github.com/keitaroinc/ckanext-showcase.git@843f56ab1d21041e459038983cde6afc2d663597#egg=ckanext-showcase
+-e git+https://github.com/ckan/ckanext-showcase.git@9a1851c800caad3a7c511302daee179a6531a2d1#egg=ckanext-showcase
 -e git+https://github.com/ViderumGlobal/USMetadata.git@5a5d5e04d7c83b65f222298635faf4d22ee063e6#egg=USMetadata
 -e git+https://github.com/datopian/ckanext-deadoralive.git@e3637bc9f676ff740a23be92778272a6c50c7c1f#egg=ckanext-deadoralive
 -e git+https://github.com/okfn/ckanext-geoview.git@796f8413668ce6ba381293531ef1a13cbbc9d0aa#egg=ckanext-geoview
