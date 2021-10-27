@@ -16,7 +16,7 @@ ckanext-ga-report = {git = "https://github.com/CivicActions/ckanext-ga-report.gi
 ckanext-googleanalytics = {git = "https://github.com/datopian/ckanext-googleanalytics.git", branch = "ed-debug"}
 ckanext-harvest = {git = "https://github.com/ckan/ckanext-harvest.git", tag = "v1.1.4"}
 ckanext-pages = {git = "https://github.com/ckan/ckanext-pages.git", tag = "v0.2.0"}
-ckanext-showcase = {git = "https://github.com/keitaroinc/ckanext-showcase.git", branch = "ckan-2.8"}
+ckanext-showcase = {git = "https://github.com/ckan/ckanext-showcase.git", tag = "v1.4.3"}
 ckanext-usmetadata = {git = "https://github.com/ViderumGlobal/USMetadata.git", rev = "5a5d5e04d7c83b65f222298635faf4d22ee063e6"}
 ckanext-deadoralive = {git = "https://github.com/datopian/ckanext-deadoralive.git", rev = "e3637bc9f676ff740a23be92778272a6c50c7c1f"}
 ckanext-geoview = {git = "https://github.com/okfn/ckanext-geoview.git", tag = "lacounts-0.1"}
