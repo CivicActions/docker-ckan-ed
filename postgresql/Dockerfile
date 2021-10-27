@@ -1,8 +1,11 @@
-FROM postgres:9.6-alpine
+FROM postgres:12-alpine
 MAINTAINER Open Knowledge International
 
+RUN rm -rf /var/lib/postgresql/data
+RUN mkdir -p /var/lib/postgresql/data
 # Allow connections; we don't map out any ports so only linked docker containers can connect
 RUN echo "host all  all    0.0.0.0/0  md5" >> /var/lib/postgresql/data/pg_hba.conf
+
 
 # Customize default user/pass/db
 ENV POSTGRES_DB ckan
