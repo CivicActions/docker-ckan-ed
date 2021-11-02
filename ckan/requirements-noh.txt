@@ -12,4 +12,5 @@
 -e git+https://github.com/okfn/ckanext-geoview.git@796f8413668ce6ba381293531ef1a13cbbc9d0aa#egg=ckanext-geoview
 -e git+https://github.com/okfn/ckanext-pdfview.git@7e8b72daf64972832f260b60bda8c9e6e8a50e95#egg=ckanext-pdfview
 -e git+https://github.com/ckan/deadoralive.git@82eed6c73e17b9884476311a7a8fae9d2b379600#egg=deadoralive
+-e git+https://github.com/ckan/ckanext-xloader.git@ef300955001d2d51088697013dae24c3ff4d39fd#egg=ckanext-xloader
 #-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed
