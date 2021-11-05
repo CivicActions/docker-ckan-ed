@@ -221,10 +221,10 @@ description = "Add GA tracking and reporting to CKAN instance"
 name = "ckanext-googleanalytics"
 optional = false
 python-versions = "*"
-version = "0.1-ed-1"
+version = "0.1"
 
 [package.source]
-reference = "cca00c9ede424bc9e804a9c7f342e106184dff38"
+reference = "b3974528ade74787d98871ddec07dc898e9ff9e2"
 type = "git"
 url = "https://github.com/datopian/ckanext-googleanalytics.git"
 [[package]]
@@ -1696,7 +1696,7 @@ test = ["zope.event"]
 testing = ["zope.event", "nose", "coverage"]
 
 [metadata]
-content-hash = "4edc1ab57953c00ccfb07c257a161ec5e348c924f6e3ccd1a1297553c33f4903"
+content-hash = "c0e675280a403f7aec0e52da8cd0e7716e9b2b3a58c9957254cf81196d8ef2b8"
 python-versions = "^2.7"
 
 [metadata.files]
