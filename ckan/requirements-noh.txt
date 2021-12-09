@@ -4,7 +4,7 @@
 -e git+https://github.com/okfn/ckanext-envvars.git@8602376a92a77b4f2d41763b6823d041469fa08e#egg=ckanext-envvars
 -e git+https://github.com/CivicActions/ckanext-ga-report.git@1de4e65a02d939dacc2a48069afd926603619490#egg=ckanext-ga-report
 -e git+https://github.com/datopian/ckanext-googleanalytics.git@cca00c9ede424bc9e804a9c7f342e106184dff38#egg=ckanext-googleanalytics
--e git+https://github.com/ckan/ckanext-harvest.git@204b1f301a5cb21e459afca482c77f97e4ce3807#egg=ckanext-harvest
+-e git+https://github.com/ckan/ckanext-harvest.git@7b251f0e3b26e9567025b833228676b8801979d0#egg=ckanext-harvest
 -e git+https://github.com/ckan/ckanext-pages.git@8b4a97787e14e37a2251ed18431ce33c216b39b0#egg=ckanext-pages
 -e git+https://github.com/ckan/ckanext-showcase.git@9a1851c800caad3a7c511302daee179a6531a2d1#egg=ckanext-showcase
 -e git+https://github.com/ViderumGlobal/USMetadata.git@5a5d5e04d7c83b65f222298635faf4d22ee063e6#egg=USMetadata
