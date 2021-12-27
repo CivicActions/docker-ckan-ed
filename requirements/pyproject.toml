@@ -13,7 +13,7 @@ ckanext-contact = {git = "https://github.com/okfn/ckanext-contact.git", tag = "l
 ckanext-datajson = {git = "https://github.com/datopian/ckanext-datajson.git", tag = "0.5.1"}
 ckanext-envvars = {git = "https://github.com/okfn/ckanext-envvars.git", rev = "8602376a92a77b4f2d41763b6823d041469fa08e"}
 ckanext-ga-report = {git = "https://github.com/CivicActions/ckanext-ga-report.git", rev = "1de4e65a02d939dacc2a48069afd926603619490"}
-ckanext-googleanalytics = {git = "https://github.com/datopian/ckanext-googleanalytics.git", branch = "ed-debug"}
+ckanext-googleanalytics = {git = "https://github.com/datopian/ckanext-googleanalytics.git", branch = "ed-2.9"}
 ckanext-harvest = {git = "https://github.com/ckan/ckanext-harvest.git", tag = "v1.2.0"}
 ckanext-pages = {git = "https://github.com/ckan/ckanext-pages.git", tag = "v0.2.0"}
 ckanext-showcase = {git = "https://github.com/ckan/ckanext-showcase.git", tag = "v1.4.3"}
