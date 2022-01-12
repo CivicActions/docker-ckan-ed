@@ -1,0 +1,15 @@
+diff --git a/ckan/lib/search/query.py b/ckan/lib/search/query.py
+index 4d83f850e..3c51da2b6 100644
+--- a/ckan/lib/search/query.py
++++ b/ckan/lib/search/query.py
+@@ -312,6 +312,10 @@ class PackageSearchQuery(SearchQuery):
+ 
+         # default query is to return all documents
+         q = query.get('q')
++
++        if q:
++            query['q'] = q.lower()
++
+         if not q or q == '""' or q == "''":
+             query['q'] = "*:*"
+ 
