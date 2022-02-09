@@ -11,6 +11,8 @@ ENV CKAN_SITE_URL=http://ckan-dev:5000
 ENV CKAN__PLUGINS  envvars
 ENV GIT_BRANCH=ckan-2.9.4
 ENV SRC_EXTENSIONS_DIR=/srv/app/src_extensions
+ENV CKAN_VERSION=2.9.5
+ENV CKAN_CORE_NAME=ckan
 
 # UWSGI options
 ENV UWSGI_HARAKIRI=50
@@ -102,6 +104,7 @@ COPY 2.9/setup/start_ckan_development-py2.sh ${APP_DIR}
 CMD ["/srv/app/start_ckan.sh"]
 # Create entrypoint directory for children image scripts
 ONBUILD RUN mkdir /docker-entrypoint.d
+COPY docker-entrypoint.d/* /docker-entrypoint.d/
 
 RUN chown ckan -R /srv/app
 

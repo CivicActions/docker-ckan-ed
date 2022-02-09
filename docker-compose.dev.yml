@@ -17,6 +17,11 @@ services:
     volumes:
       - ckan_storage:/var/lib/ckan
       - ./src:/srv/app/src_extensions
+    networks:
+      - frontend
+      - backend
+    depends_on:
+      - db
 
   datapusher:
     container_name: datapusher
@@ -24,6 +29,9 @@ services:
       context: datapusher/
     ports:
       - "8800:8800"
+    networks:
+      - frontend
+      - backend
 
   db:
     container_name: db
@@ -33,16 +41,39 @@ services:
       context: postgresql/
     volumes:
       - pg_data:/var/lib/postgresql/data
+    networks:
+      - backend
+
+  #solr:
+  #  container_name: solr
+  #  build:
+  #    context: solr/
 
   solr:
     container_name: solr
-    build:
-      context: solr/
+    image: solr:8.11.1
+    networks:
+      - backend
+    env_file:
+      - ./.dev.env
+    environment:
+      - CKAN_VERSION=2.9.5
+      - CKAN_CORE_NAME=ckan
+    volumes:
+      - solr_data:/var/solr
+      - ${PWD}/solr8/ckan_init_solr.sh:/docker-entrypoint-initdb.d/ckan_init_solr.sh
 
   redis:
     container_name: redis
     image: redis:alpine
+    networks:
+      - backend
 
 volumes:
   ckan_storage:
   pg_data:
+  solr_data:
+
+networks:
+  frontend:
+  backend:

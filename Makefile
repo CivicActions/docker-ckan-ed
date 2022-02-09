@@ -57,7 +57,10 @@ cypress-tests:
 	cd src/ckanext-ed/tests && node test.js
 
 run-seeds:
+	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckanext-ed init_survey_db
 	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckanext-ed init_record_schedule
 	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckanext-ed ed create_ed_vocabularies
 	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckanext-ed ed create_ed_organizations
 	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckanext-ed ed create_ed_groups
+	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckanext-ed ed create_ed_data_explorers
+	docker-compose -f $(DOCKER_COMPOSE_YML) exec $(CKAN_CONTAINER) paster --plugin=ckanext-ed level_column
