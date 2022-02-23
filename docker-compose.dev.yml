@@ -23,15 +23,15 @@ services:
     depends_on:
       - db
 
-  datapusher:
-    container_name: datapusher
-    build:
-      context: datapusher/
-    ports:
-      - "8800:8800"
-    networks:
-      - frontend
-      - backend
+  #datapusher:
+  #  container_name: datapusher
+  #  build:
+  #    context: datapusher/
+  #  ports:
+  #    - "8800:8800"
+  #  networks:
+  #    - frontend
+  #    - backend
 
   db:
     container_name: db
