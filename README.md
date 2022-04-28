@@ -25,7 +25,7 @@ CKAN__RECAPTCHA__PRIVATEKEY=YourKey
 
 ## Analytics (GA-Report)
 
-Generate token.dat file following instructions here https://github.com/CivicActions/ckanext-ga-report#authorization and copy insights into ckan/token.dat. Looks something like
+Generate a token.dat file following instructions here https://github.com/CivicActions/ckanext-ga-report#authorization and copy insights into ckan/token.dat. Looks something like
 
 ```
 {
