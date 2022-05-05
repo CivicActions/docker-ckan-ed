@@ -1,8 +1,0 @@
-env
-.gitignore
-docker-compose.yml
-.env.local
-docker-compose-28.yml
-docker-compose-294.yml
-docker-compose.295.yml
-ckan/Dockerfile
