@@ -38,6 +38,8 @@ services:
       - .dev.env
     build:
       context: postgresql/
+    environment:
+      - PGDATA=/var/lib/postgresql/data/db
     volumes:
       - pg_data:/var/lib/postgresql/data
     networks:
