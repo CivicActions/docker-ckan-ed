@@ -13,6 +13,7 @@ poetry export -vvv --format requirements.txt --output ../ckan/requirements.tmp
 poetry export --dev -vvv --format requirements.txt --output ../ckan/requirements-dev.tmp
 # Now extract the packages that require editable (non-hashed) source from the hashable packages
 grep -v https: ../ckan/requirements.tmp > ../ckan/requirements.txt
+pip-compile --generate-hashes -o ../ckan/requirements.txt ../ckan/requirements.txt
 grep -v https: ../ckan/requirements-dev.tmp > ../ckan/requirements-dev.txt
 
 # Now create the requirements-noh.txt for editable sources with their commit hash
