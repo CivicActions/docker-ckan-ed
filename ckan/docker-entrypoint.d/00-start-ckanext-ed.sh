@@ -2,10 +2,12 @@
 
 echo "Preparing ckanext-ed"
 
-paster --plugin=ckanext-ed init_survey_db
-paster --plugin=ckanext-ed ed create_ed_vocabularies
-paster --plugin=ckanext-ed ed create_ed_groups
-paster --plugin=ckanext-ed ed create_ed_organizations
-paster --plugin=ckanext-ed ed create_ed_data_explorers
-paster --plugin=ckanext-ed init_record_schedule
-paster --plugin=ckanext-ed level_column
+ckan -c ckan.ini edcli init-survey-db
+ckan -c ckan.ini edcli init-record-schedule
+ckan -c ckan.ini edcli populate-recordsdb
+ckan -c ckan.ini edcli ed create_ed_vocabularies
+ckan -c ckan.ini edcli ed create_ed_groups
+ckan -c ckan.ini edcli ed create_ed_organizations
+ckan -c ckan.ini edcli ed create_ed_data_explorers
+ckan -c ckan.ini edcli level-column
+ckan -c ckan.ini edcli omb-to-sources

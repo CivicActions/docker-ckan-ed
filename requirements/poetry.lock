@@ -207,6 +207,36 @@ reference = "ckan-2.9.5"
 resolved_reference = "65af260bef26ea99981597f872d39da0a3f4f3f9"
 
 [[package]]
+name = "ckanext-datajson"
+version = "1.0.0"
+description = "CKAN extension to generate /data.json"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/datopian/ckanext-datajson.git"
+reference = "dev/py3-upgrade"
+resolved_reference = "5e96345e8f95fc092a1a4893b0de67f939977599"
+
+[[package]]
+name = "ckanext-deadoralive"
+version = "0.1.6"
+description = "A CKAN extension for the Dead or Alive link checker service"
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/datopian/ckanext-deadoralive.git"
+reference = "dev/python3"
+resolved_reference = "e2e333f6018d0a2f22d088de2750363b21d5399f"
+
+[[package]]
 name = "ckanext-envvars"
 version = "0.0.1"
 description = "CKAN configuration settings available from env vars"
@@ -233,7 +263,7 @@ develop = false
 [package.source]
 type = "git"
 url = "https://github.com/datopian/ckanext-googleanalytics.git"
-reference = "a5a8c0f47d3a520317d29c4cb27b002ddd3a6df6"
+reference = "ed-2.9"
 resolved_reference = "a5a8c0f47d3a520317d29c4cb27b002ddd3a6df6"
 
 [[package]]
@@ -409,6 +439,24 @@ ssh = ["bcrypt (>=3.1.5)"]
 test = ["pytest (>=6.2.0)", "pytest-benchmark", "pytest-cov", "pytest-subtests", "pytest-xdist", "pretend", "iso8601", "pytz", "hypothesis (>=1.11.4,!=3.79.2)"]
 
 [[package]]
+name = "deadoralive"
+version = "0.1.1"
+description = ""
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.dependencies]
+requests = "*"
+
+[package.source]
+type = "git"
+url = "https://github.com/datopian/deadoralive.git"
+reference = "82eed6c73e17b9884476311a7a8fae9d2b379600"
+resolved_reference = "82eed6c73e17b9884476311a7a8fae9d2b379600"
+
+[[package]]
 name = "decorator"
 version = "5.1.1"
 description = "Decorators for Humans"
@@ -439,6 +487,14 @@ description = "Dominate is a Python library for creating and manipulating HTML d
 category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "et-xmlfile"
+version = "1.1.0"
+description = "An implementation of lxml.xmlfile for the standard library"
+category = "main"
+optional = false
+python-versions = ">=3.6"
 
 [[package]]
 name = "executing"
@@ -748,6 +804,14 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
+name = "jdcal"
+version = "1.4.1"
+description = "Julian dates from proleptic Gregorian and Julian calendars."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "jedi"
 version = "0.18.1"
 description = "An autocompletion tool for Python that can be used for text editors."
@@ -797,6 +861,22 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "jsonschema"
+version = "2.4.0"
+description = "An implementation of JSON Schema validation for Python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "lepl"
+version = "5.1.3"
+description = "A Parser Library for Python 2.6+/3+: Recursive Descent; Full Backtracking"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "lxml"
 version = "4.6.3"
 description = "Powerful and Pythonic XML processing library combining libxml2/libxslt with the ElementTree API."
@@ -827,11 +907,14 @@ lingua = ["lingua"]
 
 [[package]]
 name = "markdown"
-version = "2.6.7"
+version = "3.3.3"
 description = "Python implementation of Markdown."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">=3.6"
+
+[package.extras]
+testing = ["coverage", "pyyaml"]
 
 [[package]]
 name = "markupsafe"
@@ -921,6 +1004,18 @@ pyasn1 = ">=0.1.7"
 pyasn1-modules = ">=0.0.5"
 rsa = ">=3.1.4"
 six = ">=1.6.1"
+
+[[package]]
+name = "openpyxl"
+version = "2.6.4"
+description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[package.dependencies]
+et_xmlfile = "*"
+jdcal = "*"
 
 [[package]]
 name = "packaging"
@@ -1412,6 +1507,14 @@ urllib3 = ">=1.25.10"
 tests = ["pytest (>=7.0.0)", "coverage (>=6.0.0)", "pytest-cov", "pytest-asyncio", "pytest-localserver", "flake8", "types-mock", "types-requests", "mypy"]
 
 [[package]]
+name = "rfc3987"
+version = "1.3.8"
+description = "Parsing and validation of URIs (RFC 3986) and IRIs (RFC 3987)"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "routes"
 version = "1.13"
 description = "Routing Recognition and Generation Tools"
@@ -1882,7 +1985,7 @@ testing = ["zope.event", "nose", "coverage"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.8"
-content-hash = "9bcc7a885c3131976555796c83d31d3c13c0a6442901199849b71c541ac65d13"
+content-hash = "92d2fa67b5736b3ebd4a713b0fc19c39f34db7d2c55191ae137f18ba55f05df3"
 
 [metadata.files]
 alabaster = [
@@ -1917,6 +2020,8 @@ certifi = []
 cffi = []
 chardet = []
 ckan = []
+ckanext-datajson = []
+ckanext-deadoralive = []
 ckanext-envvars = []
 ckanext-googleanalytics = []
 ckanext-harvest = []
@@ -1934,6 +2039,7 @@ cookiecutter = []
 coverage = []
 coveralls = []
 cryptography = []
+deadoralive = []
 decorator = []
 docopt = [
     {file = "docopt-0.6.2.tar.gz", hash = "sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"},
@@ -1945,6 +2051,10 @@ docutils = [
 dominate = [
     {file = "dominate-2.4.0-py2.py3-none-any.whl", hash = "sha256:6e833aea505f0236a9fc692326bac575f8bd38ae0f3a1bdc73d20ca606ac75d5"},
     {file = "dominate-2.4.0.tar.gz", hash = "sha256:a92474b4312bd8b4c1789792f3ec8c571cd8afa8e7502a2b1c64dd48cd67e59c"},
+]
+et-xmlfile = [
+    {file = "et_xmlfile-1.1.0-py3-none-any.whl", hash = "sha256:a2ba85d1d6a74ef63837eed693bcb89c3f752169b0e3e7ae5b16ca5e1b3deada"},
+    {file = "et_xmlfile-1.1.0.tar.gz", hash = "sha256:8eb9e2bc2f8c97e37a2dc85a09ecdcdec9d8a396530a6d5a33b30b9a92da0c5c"},
 ]
 executing = []
 factory-boy = []
@@ -1995,6 +2105,10 @@ itsdangerous = [
     {file = "itsdangerous-1.1.0-py2.py3-none-any.whl", hash = "sha256:b12271b2047cb23eeb98c8b5622e2e5c5e9abd9784a153e9d8ef9cb4dd09d749"},
     {file = "itsdangerous-1.1.0.tar.gz", hash = "sha256:321b033d07f2a4136d3ec762eac9f16a10ccd60f53c0c91af90217ace7ba1f19"},
 ]
+jdcal = [
+    {file = "jdcal-1.4.1-py2.py3-none-any.whl", hash = "sha256:1abf1305fce18b4e8aa248cf8fe0c56ce2032392bc64bbd61b5dff2a19ec8bba"},
+    {file = "jdcal-1.4.1.tar.gz", hash = "sha256:472872e096eb8df219c23f2689fc336668bdb43d194094b5cc1707e1640acfc8"},
+]
 jedi = []
 jinja2 = [
     {file = "Jinja2-2.10.1-py2.py3-none-any.whl", hash = "sha256:14dd6caf1527abb21f08f86c784eac40853ba93edb79552aa1e4b8aef1b61c7b"},
@@ -2004,11 +2118,20 @@ jinja2-time = []
 json-table-schema = [
     {file = "json-table-schema-0.2.1.tar.gz", hash = "sha256:519961cf21f6d45124ff73388538e6db78148e9ed95f43f1c0a2fc4d7e980d97"},
 ]
+jsonschema = [
+    {file = "jsonschema-2.4.0-py2.py3-none-any.whl", hash = "sha256:5af36686c271097f25ec023546c397cb99bc67a5db3836e52e6b37bdb45ca21e"},
+    {file = "jsonschema-2.4.0.tar.gz", hash = "sha256:1298a2f1b2f4c4a7b921cccd159e4e42f6d7b0fb75c86c0cdecfc71f061833fa"},
+    {file = "jsonschema-2.4.0.zip", hash = "sha256:acf1e360b4682d64ba6acc35dbc65d81d9bde68a291a97f14f16f4282733f5a4"},
+]
+lepl = [
+    {file = "LEPL-5.1.3.tar.gz", hash = "sha256:a8715c709308350ce4afed5d525682656886d38141387ec87d44421da8d41397"},
+    {file = "LEPL-5.1.3.zip", hash = "sha256:da6dfa01bbd449f8544857b13474ad52fcca30a5d30de96271c70f34c7a3f96e"},
+]
 lxml = []
 mako = []
 markdown = [
-    {file = "Markdown-2.6.7.tar.gz", hash = "sha256:daebf24846efa7ff269cfde8c41a48bb2303920c7b2c7c5e04fa82e6282d05c0"},
-    {file = "Markdown-2.6.7.zip", hash = "sha256:61169c455b0e541ac8b6d0cac33c785f14d486b4b24f28a58d63faeec6f2d0a8"},
+    {file = "Markdown-3.3.3-py3-none-any.whl", hash = "sha256:c109c15b7dc20a9ac454c9e6025927d44460b85bd039da028d85e2b6d0bcc328"},
+    {file = "Markdown-3.3.3.tar.gz", hash = "sha256:5d9f2b5ca24bc4c7a390d22323ca4bad200368612b5aaa7796babf971d2b2f18"},
 ]
 markupsafe = [
     {file = "MarkupSafe-1.1.1-cp27-cp27m-macosx_10_6_intel.whl", hash = "sha256:09027a7803a62ca78792ad89403b1b7a73a01c8cb65909cd876f7fcebd79b161"},
@@ -2059,6 +2182,9 @@ nose = [
 oauth2client = [
     {file = "oauth2client-4.1.3-py2.py3-none-any.whl", hash = "sha256:b8a81cc5d60e2d364f0b1b98f958dbd472887acaf1a5b05e21c28c31a2d6d3ac"},
     {file = "oauth2client-4.1.3.tar.gz", hash = "sha256:d486741e451287f69568a4d26d70d9acd73a2bbfa275746c535b4209891cccc6"},
+]
+openpyxl = [
+    {file = "openpyxl-2.6.4.tar.gz", hash = "sha256:1d53801678e18d7fe38c116f1ad0c2383a654670c4c8806105b611c92d92f2e3"},
 ]
 packaging = []
 parso = []
@@ -2239,6 +2365,10 @@ requests = [
     {file = "requests-2.25.1.tar.gz", hash = "sha256:27973dd4a904a4f13b263a19c866c13b92a39ed1c964655f025f3f8d3d75b804"},
 ]
 responses = []
+rfc3987 = [
+    {file = "rfc3987-1.3.8-py2.py3-none-any.whl", hash = "sha256:10702b1e51e5658843460b189b185c0366d2cf4cff716f13111b0ea9fd2dce53"},
+    {file = "rfc3987-1.3.8.tar.gz", hash = "sha256:d3c4d257a560d544e9826b38bc81db676890c79ab9d7ac92b39c7a253d5ca733"},
+]
 routes = [
     {file = "Routes-1.13.tar.gz", hash = "sha256:cc03d1a357cdb7af82e3909ee8ff93cb2b2afb48aca23bfde0117d6f49f624a7"},
 ]

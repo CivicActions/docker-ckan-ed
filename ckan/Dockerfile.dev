@@ -48,6 +48,8 @@ RUN apk add --virtual .build-deps \
         libffi-dev \
         cargo
 
+ENV TZ America/New_York
+
 # Create SRC_DIR
 RUN mkdir -p ${SRC_DIR} && \
     # Install pip, supervisord and uwsgi
