@@ -106,7 +106,7 @@ unidecode="1.0.22"
 [tool.poetry.dev-dependencies]
 # CKAN core
 beautifulsoup4="4.10.0"
-cookiecutter="1.7.3"
+cookiecutter="2.1.1"
 coveralls="3.3.1"
 docutils="0.17.1"
 Faker="13.3.4"
