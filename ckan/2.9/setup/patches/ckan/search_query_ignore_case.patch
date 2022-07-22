@@ -1,8 +1,8 @@
 diff --git a/ckan/lib/search/query.py b/ckan/lib/search/query.py
-index 4d83f850e..3c51da2b6 100644
+index da9c38bf4..1994a4d04 100644
 --- a/ckan/lib/search/query.py
 +++ b/ckan/lib/search/query.py
-@@ -312,6 +312,10 @@ class PackageSearchQuery(SearchQuery):
+@@ -346,6 +346,10 @@ class PackageSearchQuery(SearchQuery):
  
          # default query is to return all documents
          q = query.get('q')

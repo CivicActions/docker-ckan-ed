@@ -2,4 +2,4 @@
 
 echo "Enabling ckanext-harvest"
 
-paster --plugin=ckanext-harvest harvester initdb
+ckan -c ckan.ini harvester initdb
