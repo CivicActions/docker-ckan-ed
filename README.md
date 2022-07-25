@@ -80,4 +80,4 @@ When dependencies need to be added, updated, or removed, they should be handled 
 and the file `requirements-noh.txt` will contain the editable source packages and their respective hashes.
 3. Commit `ckan/requirements.txt`, `ckan/requirements-noh.txt`, `ckan/requirements-dev.txt`, `requirements/pyproject.toml`, and `requirements/poetry.lock`.
 
-> **NOTE:** `make update-dependencies` and all `poetry` commands should be run with `poetry==1.1.14` (earlier/later versions _might_ work—haven't been tested), installed within a **Python 3.8** environment.
+> **NOTE:** `make update-dependencies` and all `poetry` commands should be run with `poetry==1.1.14` (earlier/later versions _might_ work—haven't been tested), installed within a **Python 3.6.8** environment using `pip==21.3.1`.
