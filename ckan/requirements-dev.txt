@@ -387,9 +387,9 @@ inflection==0.5.1 ; python_version >= "3.6" \
 ipdb==0.13.2 ; python_version >= "2.7" \
     --hash=sha256:77fb1c2a6fccdfee0136078c9ed6fe547ab00db00bebff181f1e8c9e13418d49
     # via -r ../ckan/requirements-dev.txt
-ipython==7.16.3 ; python_version >= "3.6" \
-    --hash=sha256:5ac47dc9af66fc2f5530c12069390877ae372ac905edca75a92a6e363b5d7caa \
-    --hash=sha256:c0427ed8bc33ac481faf9d3acf7e84e0010cdaada945e0badd1e2e74cc075833
+ipython==7.31.1 ; python_version >= "3.6" \
+    --hash=sha256:55df3e0bd0f94e715abd968bedd89d4e8a7bce4bf498fb123fed4f5398fea874 \
+    --hash=sha256:b5548ec5329a4bcf054a5deed5099b0f9622eb9ea51aaa7104d215fece201d8c
     # via
     #   -r ../ckan/requirements-dev.txt
     #   ipdb

@@ -40,7 +40,7 @@ imagesize==1.2.0
 importlib-metadata==4.8.1
 incremental==21.3.0
 ipdb==0.13.2
-ipython==7.28.0
+ipython==7.31.1
 itsdangerous==1.1.0
 jedi==0.18.0
 Jinja2==2.10.1
