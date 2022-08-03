@@ -8,4 +8,5 @@
 -e git+https://github.com/ckan/ckanext-showcase.git@17a5a3fad4d4a0d51e6f04caf757f13616683801#egg=ckanext-showcase
 -e git+https://github.com/ckan/ckanext-pages.git@b9f7e49db5c036c602b1bff7050e91eccdc00b53#egg=ckanext-pages
 -e git+https://github.com/ckan/ckanext-xloader.git@ef300955001d2d51088697013dae24c3ff4d39fd#egg=ckanext-xloader
+-e git+https://github.com/datopian/ckanext-dataexplorer-react.git@ed#egg=ckanext-dataexplorer-react
 #-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed
