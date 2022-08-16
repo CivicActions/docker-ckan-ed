@@ -9,3 +9,4 @@
 -e git+https://github.com/ckan/ckanext-pages.git@b9f7e49db5c036c602b1bff7050e91eccdc00b53#egg=ckanext-pages
 -e git+https://github.com/ckan/ckanext-xloader.git@ef300955001d2d51088697013dae24c3ff4d39fd#egg=ckanext-xloader
 #-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed
+-e git+https://github.com/datopian/messytables.git@919aca6eb092e217599f09b367b101dd122bf488#egg=messytables
