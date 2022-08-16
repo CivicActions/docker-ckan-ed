@@ -1,6 +1,6 @@
 -e git+https://github.com/ckan/ckan.git@65af260bef26ea99981597f872d39da0a3f4f3f9#egg=ckan
 -e git+https://github.com/datopian/ckanext-datajson.git@5e96345e8f95fc092a1a4893b0de67f939977599#egg=ckanext-datajson
--e git+https://github.com/datopian/ckanext-deadoralive.git@e2e333f6018d0a2f22d088de2750363b21d5399f#egg=ckanext-deadoralive
+-e git+https://github.com/datopian/ckanext-deadoralive.git@3259828d4bbe6d4ec6889bfd50c8b4a40d0d023f#egg=ckanext-deadoralive
 -e git+https://github.com/datopian/deadoralive.git@82eed6c73e17b9884476311a7a8fae9d2b379600#egg=deadoralive
 -e git+https://github.com/okfn/ckanext-envvars.git@8602376a92a77b4f2d41763b6823d041469fa08e#egg=ckanext-envvars
 -e git+https://github.com/datopian/ckanext-googleanalytics.git@a5a8c0f47d3a520317d29c4cb27b002ddd3a6df6#egg=ckanext-googleanalytics
@@ -8,5 +8,5 @@
 -e git+https://github.com/ckan/ckanext-showcase.git@17a5a3fad4d4a0d51e6f04caf757f13616683801#egg=ckanext-showcase
 -e git+https://github.com/ckan/ckanext-pages.git@b9f7e49db5c036c602b1bff7050e91eccdc00b53#egg=ckanext-pages
 -e git+https://github.com/ckan/ckanext-xloader.git@ef300955001d2d51088697013dae24c3ff4d39fd#egg=ckanext-xloader
+-e git+https://github.com/datopian/messytables.git@d9504d6a294e87e679707de96262072c7d332dfb#egg=messytables
 #-e git+https://github.com/CivicActions/ckanext-ed.git#egg=ckanext-ed
--e git+https://github.com/datopian/messytables.git@919aca6eb092e217599f09b367b101dd122bf488#egg=messytables
