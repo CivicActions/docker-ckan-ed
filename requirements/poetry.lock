@@ -212,6 +212,21 @@ simplejson = "*"
 six = ">=1.9,<2.0"
 
 [[package]]
+name = "ckanext-dataexplorer-react"
+version = "0.0.1"
+description = "A CKAN extension that provides visualization features."
+category = "main"
+optional = false
+python-versions = "*"
+develop = false
+
+[package.source]
+type = "git"
+url = "https://github.com/datopian/ckanext-dataexplorer-react.git"
+reference = "73173a1e831dd417a7b252826b0e7ec75cf3459c"
+resolved_reference = "73173a1e831dd417a7b252826b0e7ec75cf3459c"
+
+[[package]]
 name = "ckanext-datajson"
 version = "1.0.0"
 description = "CKAN extension to generate /data.json"
@@ -500,7 +515,7 @@ Faker = ">=0.7.0"
 
 [[package]]
 name = "faker"
-version = "14.0.0"
+version = "14.1.0"
 description = "Faker is a Python package that generates fake data for you."
 category = "dev"
 optional = false
@@ -1850,7 +1865,7 @@ testing = ["zope.event", "nose", "coverage"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.8"
-content-hash = "2c5e79d16c3bf0a2e405cec4a6284f5d35bb076d6221e9f62855c12211970cf5"
+content-hash = "2d004175c6ac636204d21553ae7865e79fc7befcbf2bbe518823798b587f8723"
 
 [metadata.files]
 alabaster = [
@@ -1894,6 +1909,7 @@ ckan = []
 ckanapi = [
     {file = "ckanapi-4.7.tar.gz", hash = "sha256:6cb1414faef384de58a0e1f648b977177db444e95073b65ed950f2a8b0f55d0d"},
 ]
+ckanext-dataexplorer-react = []
 ckanext-datajson = []
 ckanext-deadoralive = []
 ckanext-envvars = []
@@ -1985,8 +2001,8 @@ factory-boy = [
     {file = "factory_boy-2.12.0.tar.gz", hash = "sha256:faf48d608a1735f0d0a3c9cbf536d64f9132b547dae7ba452c4d99a79e84a370"},
 ]
 faker = [
-    {file = "Faker-14.0.0-py3-none-any.whl", hash = "sha256:f1558ecb1770d8c871ea01cc2edc7b5e86148b0fa0466731f0e1e8953165d179"},
-    {file = "Faker-14.0.0.tar.gz", hash = "sha256:0c7d283a96c49af64fe319f70d2b68927873c9173e922f8eda6001e7757cb63b"},
+    {file = "Faker-14.1.0-py3-none-any.whl", hash = "sha256:067a03f64e555261610e69277536072997b4576dbf84b113faef3c06d85b466b"},
+    {file = "Faker-14.1.0.tar.gz", hash = "sha256:0e00bfa1eadf1493f15662edb181222fea4847764cf3f9ff3e66ee0f95c9a644"},
 ]
 fanstatic = []
 feedgen = [
