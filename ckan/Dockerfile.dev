@@ -1,4 +1,4 @@
-FROM alpine:3.14
+FROM alpine:3.9
 
 # Internals, you probably don't need to change these
 ENV APP_DIR=/srv/app
@@ -53,7 +53,7 @@ ENV TZ America/New_York
 # Create SRC_DIR
 RUN mkdir -p ${SRC_DIR} && \
     # Install pip, supervisord and uwsgi
-    curl -o ${SRC_DIR}/get-pip.py https://bootstrap.pypa.io/get-pip.py && \
+    curl -o ${SRC_DIR}/get-pip.py https://bootstrap.pypa.io/pip/3.6/get-pip.py && \
     python3 ${SRC_DIR}/get-pip.py && \
     pip3 install supervisor && \
     mkdir /etc/supervisord.d && \
@@ -69,6 +69,8 @@ COPY common/supervisord.conf /etc
 RUN pip install -r ${APP_DIR}/requirement-setuptools.txt
 RUN pip install -r ${APP_DIR}/requirements-dev.txt
 RUN pip install -r ${APP_DIR}/requirements-noh.txt
+
+RUN echo "over" >> ${SRC_DIR}/ckan/ckanext/datastore/allowed_functions.txt
 
 ENV CKAN__PLUGINS envvars image_view text_view recline_view datastore harvest ckan_harvester googleanalytics resource_proxy pages showcase xloader
 
