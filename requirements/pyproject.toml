@@ -21,6 +21,7 @@ ckanext-pages = {git = "https://github.com/ckan/ckanext-pages.git", rev = "b9f7e
 ckanext-xloader = {git = "https://github.com/ckan/ckanext-xloader.git", tag = "0.10.0"}
 messytables = {git = "https://github.com/datopian/messytables.git", rev = "d9504d6a294e87e679707de96262072c7d332dfb"}
 ckanext-dataexplorer-react = {git = "https://github.com/datopian/ckanext-dataexplorer-react.git", rev = "73173a1e831dd417a7b252826b0e7ec75cf3459c"}
+ckanext-saml2auth = {git = "https://github.com/datopian/ckanext-saml2auth.git", rev = "a012c6aeb997182c5364e82ea8882d530ca86dfa"}
 
 # CKAN core
 alembic="1.0.0"
@@ -101,6 +102,9 @@ pika="1.2.1"
 
 # ckanext-xloader
 unidecode="1.0.22"
+
+# ckanext-saml2auth
+pysaml2="7.2.0"
 
 # for deployments
 setuptools="44.1.0"
