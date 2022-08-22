@@ -388,6 +388,10 @@ importlib-metadata==0.12 ; (python_version >= "2.7" and python_version < "3.0") 
     # via
     #   -r ../ckan/requirements-dev.txt
     #   pytest
+importlib-resources==5.4.0 ; python_version >= "3.6" \
+    --hash=sha256:33a95faed5fc19b4bc16b29a6eeae248a3fe69dd55d4d229d2b480e23eeaad45 \
+    --hash=sha256:d756e2f85dd4de2ba89be0b21dba2a3bbec2e871a42a3a16719258a11f87506b
+    # via -r ../ckan/requirements-dev.txt
 incremental==21.3.0 \
     --hash=sha256:02f5de5aff48f6b9f665d99d48bfc7ec03b6e3943210de7cfc88856d755d6f57 \
     --hash=sha256:92014aebc6a20b78a8084cdd5645eeaa7f74b8933f70fa3ada2cfbd1e3b54321
