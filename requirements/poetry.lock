@@ -477,8 +477,8 @@ requests = "*"
 [package.source]
 type = "git"
 url = "https://github.com/datopian/deadoralive.git"
-reference = "82eed6c73e17b9884476311a7a8fae9d2b379600"
-resolved_reference = "82eed6c73e17b9884476311a7a8fae9d2b379600"
+reference = "ed-dev/python3.6"
+resolved_reference = "d647dfc29e5ff9e614edfcaba92a61a3a962021c"
 
 [[package]]
 name = "decorator"
@@ -552,7 +552,7 @@ Faker = ">=0.7.0"
 
 [[package]]
 name = "faker"
-version = "14.1.0"
+version = "14.2.0"
 description = "Faker is a Python package that generates fake data for you."
 category = "dev"
 optional = false
@@ -560,7 +560,7 @@ python-versions = ">=3.6"
 
 [package.dependencies]
 python-dateutil = ">=2.4"
-typing-extensions = {version = ">=3.10.0.2", markers = "python_version < \"3.8\""}
+typing-extensions = {version = ">=3.7.4.3", markers = "python_version < \"3.8\""}
 
 [[package]]
 name = "fanstatic"
@@ -1160,7 +1160,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "prompt-toolkit"
-version = "3.0.30"
+version = "3.0.31"
 description = "Library for building powerful interactive command lines in Python"
 category = "dev"
 optional = false
@@ -1955,7 +1955,7 @@ testing = ["zope.event", "nose", "coverage"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.8"
-content-hash = "28db5421a0a86749240cca191491defc6f165911dd0c4a2dbfda69f9b0d75a26"
+content-hash = "3c66d09f07ce2ffafde65bd439de60980b080110e14e1592574c45b29e519b69"
 
 [metadata.files]
 alabaster = [
@@ -2100,8 +2100,8 @@ factory-boy = [
     {file = "factory_boy-2.12.0.tar.gz", hash = "sha256:faf48d608a1735f0d0a3c9cbf536d64f9132b547dae7ba452c4d99a79e84a370"},
 ]
 faker = [
-    {file = "Faker-14.1.0-py3-none-any.whl", hash = "sha256:067a03f64e555261610e69277536072997b4576dbf84b113faef3c06d85b466b"},
-    {file = "Faker-14.1.0.tar.gz", hash = "sha256:0e00bfa1eadf1493f15662edb181222fea4847764cf3f9ff3e66ee0f95c9a644"},
+    {file = "Faker-14.2.0-py3-none-any.whl", hash = "sha256:e02c55a5b0586caaf913cc6c254b3de178e08b031c5922e590fd033ebbdbfd02"},
+    {file = "Faker-14.2.0.tar.gz", hash = "sha256:6db56e2c43a2b74250d1c332ef25fef7dc07dcb6c5fab5329dd7b4467b8ed7b9"},
 ]
 fanstatic = []
 feedgen = [
@@ -2285,7 +2285,10 @@ polib = [
     {file = "polib-1.0.7.tar.gz", hash = "sha256:43ce60d05ffa442ba9d3c5722193aadb93c38174b9fb471c8ea7ccbf8349bbca"},
 ]
 poyo = []
-prompt-toolkit = []
+prompt-toolkit = [
+    {file = "prompt_toolkit-3.0.31-py3-none-any.whl", hash = "sha256:9696f386133df0fc8ca5af4895afe5d78f5fcfe5258111c2a79a1c3e41ffa96d"},
+    {file = "prompt_toolkit-3.0.31.tar.gz", hash = "sha256:9ada952c9d1787f52ff6d5f3484d0b4df8952787c087edf6a1f7c2cb1ea88148"},
+]
 psycopg2-binary = [
     {file = "psycopg2-binary-2.8.4.tar.gz", hash = "sha256:3a2522b1d9178575acee4adf8fd9f979f9c0449b00b4164bb63c3475ea6528ed"},
     {file = "psycopg2_binary-2.8.4-cp27-cp27m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl", hash = "sha256:890167d5091279a27e2505ff0e1fb273f8c48c41d35c5b92adbf4af80e6b2ed6"},

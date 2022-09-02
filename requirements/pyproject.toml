@@ -12,7 +12,7 @@ ckan = {git = "https://github.com/ckan/ckan.git", tag = "ckan-2.9.5"}
 # Ckan Extensions
 ckanext-datajson = {git = "https://github.com/datopian/ckanext-datajson.git", branch = "dev/py3-upgrade"}
 ckanext-deadoralive = {git = "https://github.com/datopian/ckanext-deadoralive.git", branch = "dev/python3"}
-deadoralive = {git = "https://github.com/datopian/deadoralive.git", rev = "82eed6c73e17b9884476311a7a8fae9d2b379600"}
+deadoralive = {git = "https://github.com/datopian/deadoralive.git", branch = "ed-dev/python3.6"}
 ckanext-envvars = {git = "https://github.com/okfn/ckanext-envvars.git", rev = "8602376a92a77b4f2d41763b6823d041469fa08e"}
 ckanext-googleanalytics = {git = "https://github.com/datopian/ckanext-googleanalytics.git", branch = "ed-2.9"}
 ckanext-harvest = {git = "https://github.com/ckan/ckanext-harvest.git", tag = "v1.4.0"}
