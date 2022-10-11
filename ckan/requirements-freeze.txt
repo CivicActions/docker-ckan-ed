@@ -46,7 +46,7 @@ jedi==0.18.0
 Jinja2==2.10.1
 jinja2-time==0.2.0
 lxml==4.6.3
-Mako==1.1.5
+Mako==1.2.2
 Markdown==2.6.7
 MarkupSafe==1.1.1
 matplotlib-inline==0.1.3
