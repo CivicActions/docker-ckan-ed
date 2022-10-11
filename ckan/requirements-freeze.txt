@@ -70,7 +70,7 @@ py==1.10.0
 pycodestyle==2.5.0
 pyfakefs==3.2
 Pygments==2.10.0
-PyJWT==1.7.1
+PyJWT==2.4.0
 pyparsing==2.4.7
 pysolr==3.6.0
 pytest==4.6.5
