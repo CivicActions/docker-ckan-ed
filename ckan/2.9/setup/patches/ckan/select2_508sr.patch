@@ -1,0 +1,245 @@
+diff --git a/ckan/public/base/vendor/select2/select2.js b/ckan/public/base/vendor/select2/select2.js
+index b162260c7..87c310575 100644
+--- a/ckan/public/base/vendor/select2/select2.js
++++ b/ckan/public/base/vendor/select2/select2.js
+@@ -311,6 +311,7 @@ the specific language governing permissions and limitations under the Apache Lic
+                 whiteSpace: "nowrap"
+             });
+             sizer.attr("class","select2-sizer");
++            sizer.attr("aria-hidden","true");
+             $(document.body).append(sizer);
+         }
+         sizer.text(e.val());
+@@ -702,7 +703,6 @@ the specific language governing permissions and limitations under the Apache Lic
+             this.liveRegion = $('.select2-hidden-accessible');
+             if (this.liveRegion.length == 0) {
+                 this.liveRegion = $("<span>", {
+-                        role: "status",
+                         "aria-live": "polite"
+                     })
+                     .addClass("select2-hidden-accessible")
+@@ -1118,7 +1118,8 @@ the specific language governing permissions and limitations under the Apache Lic
+                             label=$(document.createElement("div"));
+                             label.addClass("select2-result-label");
+                             label.attr("id", "select2-result-label-" + nextUid());
+-                            label.attr("role", "option");
++                            //label.attr("role", "option");
++                            label.attr("aria-hidden", "true");
+ 
+                             formatted=opts.formatResult(result, label, query, self.opts.escapeMarkup);
+                             if (formatted!==undefined) {
+@@ -1302,6 +1303,7 @@ the specific language governing permissions and limitations under the Apache Lic
+         // abstract
+         triggerSelect: function(data) {
+             var evt = $.Event("select2-selecting", { val: this.id(data), object: data, choice: data });
++
+             this.opts.element.trigger(evt);
+             return !evt.isDefaultPrevented();
+         },
+@@ -1319,6 +1321,14 @@ the specific language governing permissions and limitations under the Apache Lic
+             this.opts.element.trigger(details);
+             this.opts.element.data("select2-change-triggered", false);
+ 
++            // 508: Screen reader support. We need to do change the live region text
++            // here because other functions earlier in the call stack change the text.
++            var detailKeys = Object.keys(details);
++
++            if (detailKeys.includes('added')) {
++                this.liveRegion.text(`${details.added.text} added`)
++            }
++
+             // some validation frameworks ignore the change event and listen instead to keyup, click for selects
+             // so here we trigger the click event manually
+             this.opts.element.click();
+@@ -1520,19 +1530,21 @@ the specific language governing permissions and limitations under the Apache Lic
+          * the dropdown is already open, or if the 'open' event listener on the element called preventDefault().
+          */
+         // abstract
+-        open: function () {
++        open: function (isDeletion) {
+ 
+-            if (!this.shouldOpen()) return false;
++            if (isDeletion != true) {
++                if (!this.shouldOpen()) return false;
+ 
+-            this.opening();
++                this.opening();
+ 
+-            // Only bind the document mousemove when the dropdown is visible
+-            $document.on("mousemove.select2Event", function (e) {
+-                lastMousePosition.x = e.pageX;
+-                lastMousePosition.y = e.pageY;
+-            });
++                // Only bind the document mousemove when the dropdown is visible
++                $document.on("mousemove.select2Event", function (e) {
++                    lastMousePosition.x = e.pageX;
++                    lastMousePosition.y = e.pageY;
++                });
+ 
+-            return true;
++                return true;
++            }
+         },
+ 
+         /**
+@@ -2431,6 +2443,14 @@ the specific language governing permissions and limitations under the Apache Lic
+                     this.opts.element.trigger($.Event("select2-focus"));
+                 }
+                 this.container.addClass("select2-container-active");
++
++                // 508: Screen reader support. Handle single currently selected values.
++                var currentSelection = this.selection.find(".select2-chosen").text();
++
++                if (![' ', ''].includes(currentSelection) && currentSelection !== this.opts.element.attr('placeholder')) {
++                    this.liveRegion.text(`Currently selected value: ${currentSelection}`);
++                }
++
+             })).on("blur", this.bind(function() {
+                 if (!this.opened()) {
+                     this.container.removeClass("select2-container-active");
+@@ -2847,8 +2867,7 @@ the specific language governing permissions and limitations under the Apache Lic
+         },
+ 
+         // multi
+-        selectChoice: function (choice) {
+-
++        selectChoice: function (choice, isDeletion) {
+             var selected = this.container.find(".select2-search-choice-focus");
+             if (selected.length && choice && choice[0] == selected[0]) {
+ 
+@@ -2861,6 +2880,11 @@ the specific language governing permissions and limitations under the Apache Lic
+                     this.close();
+                     choice.addClass("select2-search-choice-focus");
+                     this.opts.element.trigger("choice-selected", choice);
++
++                    // 508: Screen reader support.
++                    if (isDeletion != true) {
++                        this.liveRegion.text(choice.text());
++                    }
+                 }
+             }
+         },
+@@ -2909,6 +2933,10 @@ the specific language governing permissions and limitations under the Apache Lic
+ 
+             this.search.attr("tabindex", this.elementTabIndex);
+ 
++            // 508: Screen reader support. This variable is needed to determine the
++            // source of the action so we can update the live region text accordingly.
++            var isDeletion = false;
++
+             this.keydowns = 0;
+             this.search.on("keydown", this.bind(function (e) {
+                 if (!this.isInterfaceEnabled()) return;
+@@ -2924,28 +2952,33 @@ the specific language governing permissions and limitations under the Apache Lic
+                     var selectedChoice = selected;
+                     if (e.which == KEY.LEFT && prev.length) {
+                         selectedChoice = prev;
++                        isDeletion = false;
+                     }
+                     else if (e.which == KEY.RIGHT) {
+                         selectedChoice = next.length ? next : null;
++                        isDeletion = false;
+                     }
+                     else if (e.which === KEY.BACKSPACE) {
+                         if (this.unselect(selected.first())) {
+                             this.search.width(10);
+                             selectedChoice = prev.length ? prev : next;
++                            isDeletion = true;
+                         }
+                     } else if (e.which == KEY.DELETE) {
+                         if (this.unselect(selected.first())) {
+                             this.search.width(10);
+                             selectedChoice = next.length ? next : null;
++                            isDeletion = true;
+                         }
+                     } else if (e.which == KEY.ENTER) {
+                         selectedChoice = null;
++                        isDeletion = false;
+                     }
+ 
+-                    this.selectChoice(selectedChoice);
++                    this.selectChoice(selectedChoice, isDeletion);
+                     killEvent(e);
+                     if (!selectedChoice || !selectedChoice.length) {
+-                        this.open();
++                        this.open(isDeletion);
+                     }
+                     return;
+                 } else if (((e.which === KEY.BACKSPACE && this.keydowns == 1)
+@@ -2993,7 +3026,7 @@ the specific language governing permissions and limitations under the Apache Lic
+                     }
+                 }
+ 
+-                this.open();
++                this.open(isDeletion);
+ 
+                 if (e.which === KEY.PAGE_UP || e.which === KEY.PAGE_DOWN) {
+                     // prevent the page from scrolling
+@@ -3033,7 +3066,7 @@ the specific language governing permissions and limitations under the Apache Lic
+                 if (!this.container.hasClass("select2-container-active")) {
+                     this.opts.element.trigger($.Event("select2-focus"));
+                 }
+-                this.open();
++                this.open(isDeletion);
+                 this.focusSearch();
+                 e.preventDefault();
+             }));
+@@ -3043,6 +3076,7 @@ the specific language governing permissions and limitations under the Apache Lic
+                 if (!this.container.hasClass("select2-container-active")) {
+                     this.opts.element.trigger($.Event("select2-focus"));
+                 }
++
+                 this.container.addClass("select2-container-active");
+                 this.dropdown.addClass("select2-drop-active");
+                 this.clearPlaceholder();
+@@ -3053,6 +3087,7 @@ the specific language governing permissions and limitations under the Apache Lic
+ 
+             // set the placeholder if necessary
+             this.clearSearch();
++
+         },
+ 
+         // multi
+@@ -3097,6 +3132,7 @@ the specific language governing permissions and limitations under the Apache Lic
+             } else {
+                 this.search.val("").width(10);
+             }
++
+         },
+ 
+         // multi
+@@ -3107,7 +3143,7 @@ the specific language governing permissions and limitations under the Apache Lic
+         },
+ 
+         // multi
+-        opening: function () {
++        opening: function (isDeletion) {
+             this.clearPlaceholder(); // should be done before super so placeholder is not used to search
+             this.resizeSearch();
+ 
+@@ -3122,6 +3158,7 @@ the specific language governing permissions and limitations under the Apache Lic
+                 this.search.focus();
+             }
+             this.opts.element.trigger($.Event("select2-open"));
++
+         },
+ 
+         // multi
+@@ -3240,7 +3277,7 @@ the specific language governing permissions and limitations under the Apache Lic
+                 enabledItem = $(
+                     "<li class='select2-search-choice'>" +
+                     "    <div></div>" +
+-                    "    <a href='#' class='select2-search-choice-close' tabindex='-1'></a>" +
++                    "    <a href='#' class='select2-search-choice-close' tabindex='-1' aria-hidden='true'></a>" +
+                     "</li>"),
+                 disabledItem = $(
+                     "<li class='select2-search-choice select2-locked'>" +
+@@ -3323,6 +3360,8 @@ the specific language governing permissions and limitations under the Apache Lic
+             this.opts.element.trigger({ type: "select2-removed", val: this.id(data), choice: data });
+             this.triggerChange({ removed: data });
+ 
++            this.liveRegion.text(`${data.text} deleted`);
++
+             return true;
+         },
+ 
