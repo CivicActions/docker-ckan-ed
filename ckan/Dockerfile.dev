@@ -117,6 +117,7 @@ RUN for d in $APP_DIR/patches/*; do \
 
 COPY 2.9/setup/prerun.py ${APP_DIR}
 COPY 2.9/setup/supervisor.worker.conf /etc/supervisord.d/worker.conf
+COPY supervisor.d/httpd.conf /etc/supervisord.d/httpd.conf
 COPY 2.9/setup/start_ckan_development.sh ${APP_DIR}
 
 ADD 2.9/wsgi.py ${APP_DIR}
@@ -132,6 +133,39 @@ RUN mkdir $SRC_EXTENSIONS_DIR
 
 COPY 2.9/setup/start_ckan_development.sh ${APP_DIR}
 RUN chmod +x ${APP_DIR}/start_ckan_development.sh
+
+# Prepare Apache
+RUN apk --update --no-cache add apache2 apache2-dev \
+    wget ca-certificates make gcc musl-dev
+ENV PYTHON_VERSION=3.6
+ENV MOD_WSGI_VERSION=4.6.4
+ENV MOD_WSGI_SRC_URL="https://github.com/GrahamDumpleton/mod_wsgi/archive/${MOD_WSGI_VERSION}.tar.gz"
+
+RUN wget -O ./mod_wsgi.tar.gz "${MOD_WSGI_SRC_URL}"
+RUN tar -zxvf ./mod_wsgi.tar.gz
+RUN rm ./mod_wsgi.tar.gz
+
+WORKDIR /srv/app/mod_wsgi-${MOD_WSGI_VERSION}
+
+ENV CFLAGS="-I/usr/include/python${PYTHON_VERSION}m/ -L/usr/local/lib/"
+
+RUN ln -s /usr/lib/libpython${PYTHON_VERSION}m.so /usr/lib/libpython${PYTHON_VERSION}.so
+RUN ./configure \
+        --with-python=/usr/bin/python${PYTHON_VERSION} \
+        --with-apxs=/usr/bin/apxs
+RUN make
+RUN make install clean
+
+RUN sed -i 's/Listen 80/Listen 8080/g' /etc/apache2/httpd.conf
+RUN echo "LoadModule wsgi_module modules/mod_wsgi.so" >> /etc/apache2/httpd.conf
+RUN echo "WSGIScriptAlias / /srv/app/wsgi.py" >> /etc/apache2/httpd.conf
+RUN echo "WSGIPassAuthorization On" >> /etc/apache2/httpd.conf
+RUN echo "<Directory />" >> /etc/apache2/httpd.conf
+RUN echo "Require all granted" >> /etc/apache2/httpd.conf
+RUN echo "</Directory>" >> /etc/apache2/httpd.conf
+
+WORKDIR ${APP_DIR}
+
 CMD ["/srv/app/start_ckan_development.sh"]
 
 USER root

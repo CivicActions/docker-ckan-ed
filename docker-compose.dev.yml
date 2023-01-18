@@ -33,7 +33,7 @@ services:
   #    - backend
 
   db:
-    container_name: db
+    container_name: db-apache
     env_file:
       - .dev.env
     build:
@@ -51,7 +51,7 @@ services:
   #    context: solr/
 
   solr:
-    container_name: solr
+    container_name: solr-apache
     image: solr:8.11.1
     networks:
       - backend
@@ -65,7 +65,7 @@ services:
       - ${PWD}/solr8/ckan_init_solr.sh:/docker-entrypoint-initdb.d/ckan_init_solr.sh
 
   redis:
-    container_name: redis
+    container_name: redis-apache
     image: redis:alpine
     networks:
       - backend
