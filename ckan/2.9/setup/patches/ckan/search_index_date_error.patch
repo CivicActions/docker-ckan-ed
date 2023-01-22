@@ -1,0 +1,15 @@
+diff --git a/ckan/lib/search/index.py b/ckan/lib/search/index.py
+index e64045e8e..7133c0e3f 100644
+--- a/ckan/lib/search/index.py
++++ b/ckan/lib/search/index.py
+@@ -242,8 +242,8 @@ class PackageSearchIndex(SearchIndex):
+             key = six.ensure_str(key)
+             if key.endswith('_date'):
+                 try:
+-                    date = parse(value, default=bogus_date)
+-                    if date != bogus_date:
++                    if len(value) > 0:
++                        date = parse(value, default=bogus_date)
+                         value = date.isoformat() + 'Z'
+                     else:
+                         # The date field was empty, so dateutil filled it with
