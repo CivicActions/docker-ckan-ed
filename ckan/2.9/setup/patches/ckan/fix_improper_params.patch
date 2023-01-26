@@ -1,0 +1,16 @@
+diff --git a/ckan/lib/helpers.py b/ckan/lib/helpers.py
+index 26e01aeeb..cd7b1c1c4 100644
+--- a/ckan/lib/helpers.py
++++ b/ckan/lib/helpers.py
+@@ -212,7 +212,10 @@ def redirect_to(*args, **kw):
+         _url = uargs[0]
+ 
+     if skip_url_parsing is False:
+-        _url = url_for(*uargs, **kw)
++        try:
++            _url = url_for(*uargs, **kw)
++        except FlaskRouteBuildError:
++            pass
+ 
+     if _url.startswith('/'):
+         _url = str(config['ckan.site_url'].rstrip('/') + _url)
