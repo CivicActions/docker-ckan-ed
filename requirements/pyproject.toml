@@ -107,6 +107,9 @@ unidecode="1.0.22"
 pysaml2="7.2.0"
 importlib-resources="5.4.0"
 
+# pin cryptography to compatible version
+cryptography="37.0.4"
+
 # for deployments
 setuptools="44.1.0"
 psycopg2-binary="2.8.4"

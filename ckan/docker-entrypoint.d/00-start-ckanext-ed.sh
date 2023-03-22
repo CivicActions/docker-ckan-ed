@@ -11,3 +11,6 @@ ckan -c ckan.ini edcli ed create_ed_organizations
 ckan -c ckan.ini edcli ed create_ed_data_explorers
 ckan -c ckan.ini edcli level-column
 ckan -c ckan.ini edcli omb-to-sources
+ckan -c ckan.ini edcli init-coordinators
+ckan -c ckan.ini edcli add-user-package-fields
+ckan -c ckan.ini edcli init-notf-preferences
