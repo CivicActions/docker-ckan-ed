@@ -179,7 +179,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "ckan"
-version = "2.9.5"
+version = "2.9.9"
 description = "CKAN Software"
 category = "main"
 optional = false
@@ -187,16 +187,16 @@ python-versions = "*"
 develop = false
 
 [package.extras]
-dev = ["beautifulsoup4 (==4.9.1)", "coveralls", "docutils (==0.12)", "factory-boy (==2.12.0)", "Flask-DebugToolbar (==0.11.0)", "freezegun (==0.3.15)", "ipdb (==0.13.2)", "responses (==0.10.14)", "mock (==2.0.0)", "pycodestyle (==2.5.0)", "pip-tools (==5.1.2)", "pyfakefs (==3.2)", "Sphinx (==1.8.5)", "sphinx-rtd-theme (==0.4.3)", "cookiecutter (==1.7.0)", "pytest (==4.6.5)", "pytest-split-tests (==1.0.9)", "pytest-cov (==2.7.1)", "pytest-freezegun (==0.4.1)", "pytest-rerunfailures (==8.0)", "towncrier (==19.2.0)"]
-requirements = ["alembic (==1.0.0)", "babel (==2.7.0)", "beaker (==1.11.0)", "bleach (==3.1.4)", "certifi (==2021.5.30)", "chardet (==4.0.0)", "click (==7.1.2)", "dominate (==2.4.0)", "fanstatic (==1.1)", "feedgen (==0.9.0)", "flask-babel (==1.0.0)", "flask-multistatic (==1.0)", "flask (==1.1.1)", "funcsigs (==1.0.2)", "idna (==2.10)", "itsdangerous (==1.1.0)", "jinja2 (==2.10.1)", "lxml (==4.6.3)", "mako (==1.1.5)", "markdown (==2.6.7)", "markupsafe (==1.1.1)", "nose (==1.3.7)", "passlib (==1.6.5)", "polib (==1.0.7)", "psycopg2 (==2.8.2)", "pyjwt (==1.7.1)", "pysolr (==3.6.0)", "python-dateutil (==2.8.2)", "python-editor (==1.0.4)", "python-magic (==0.4.15)", "pytz (==2016.7)", "pyutilib (==5.7.1)", "pyyaml (==5.4.1)", "redis (==3.5.3)", "repoze.lru (==0.7)", "repoze.who (==2.3)", "requests (==2.25.1)", "routes (==1.13)", "rq (==1.0)", "shutilwhich (==1.1.0)", "simplejson (==3.10.0)", "six (==1.16.0)", "sqlalchemy (==1.3.5)", "sqlparse (==0.2.2)", "tzlocal (==1.3)", "unicodecsv (==0.14.1)", "urllib3 (==1.26.6)", "watchdog (==2.1.5)", "webassets (==0.12.1)", "webencodings (==0.5.1)", "webob (==1.8.7)", "werkzeug[watchdog] (==1.0.0)", "zope.interface (==4.3.2)"]
-requirements-py2 = ["alembic (==1.0.0)", "babel (==2.7.0)", "beaker (==1.10.1)", "bleach (==3.1.4)", "certifi (==2019.3.9)", "chardet (==3.0.4)", "click (==7.1.2)", "decorator (==4.4.0)", "dominate (==2.4.0)", "fanstatic (==0.12)", "flask-babel (==0.11.2)", "Flask (==1.1.1)", "flask-multistatic (==1.0)", "feedgen (==0.9.0)", "formencode (==1.3.1)", "funcsigs (==1.0.2)", "future (==0.18.2)", "idna (==2.8)", "itsdangerous (==1.1.0)", "jinja2 (==2.10.1)", "PyJWT (==1.7.1)", "lxml (==4.4.2)", "mako (==1.0.9)", "markdown (==2.6.7)", "markupsafe (==1.1.1)", "nose (==1.3.7)", "passlib (==1.6.5)", "paste (==1.7.5.1)", "pastedeploy (==2.0.1)", "pastescript (==2.0.2)", "pbr (==5.2.0)", "polib (==1.0.7)", "psycopg2 (==2.8.2)", "pygments (==2.3.1)", "pylons (==0.9.7)", "pysolr (==3.6.0)", "python-dateutil (==2.8.0)", "python2-secrets (==1.0.5)", "python-editor (==1.0.4)", "python-magic (==0.4.15)", "pytz (==2016.7)", "PyUtilib (==5.7.1)", "pyyaml (==5.3.1)", "redis (==3.2.1)", "repoze.lru (==0.7)", "repoze.who-friendlyform (==1.0.8)", "repoze.who (==2.3)", "requests (==2.22.0)", "routes (==1.13)", "rq (==1.0)", "simplejson (==3.10.0)", "six (==1.12.0)", "sqlalchemy-migrate (==0.12.0)", "sqlalchemy (==1.3.5)", "sqlparse (==0.2.2)", "tempita (==0.5.2)", "tzlocal (==1.3)", "unicodecsv (==0.14.1)", "urllib3 (==1.25.8)", "watchdog (==0.10.2)", "webassets (==0.12.1)", "webencodings (==0.5.1)", "weberror (==0.13.1)", "webhelpers (==1.3)", "webob (==1.0.8)", "webtest (==1.4.3)", "werkzeug (==0.15.5)", "zope.interface (==4.3.2)"]
+dev = ["beautifulsoup4 (==4.9.1)", "coveralls", "docutils (==0.12)", "factory-boy (==2.12.0)", "Flask-DebugToolbar (==0.11.0)", "freezegun (==0.3.15)", "ipdb (==0.13.2)", "responses (==0.10.14)", "mock (==2.0.0)", "pycodestyle (==2.5.0)", "pip-tools (==5.1.2)", "pyfakefs (==3.2)", "Sphinx (==1.8.5)", "sphinx-rtd-theme (==0.4.3)", "cookiecutter (==1.7.0)", "pytest (==4.6.5)", "pytest-split-tests (==1.0.9)", "pytest-cov (==2.7.1)", "pytest-freezegun (==0.4.1)", "pytest-rerunfailures (==8.0)", "towncrier (==19.2.0)", "Pillow (==6.2.2)", "Pillow (==9.2.0)"]
+requirements = ["alembic (==1.0.0)", "babel (==2.7.0)", "beaker (==1.11.0)", "bleach (==3.1.4)", "certifi (==2021.5.30)", "chardet (==4.0.0)", "click (==7.1.2)", "dominate (==2.4.0)", "fanstatic (==1.1)", "feedgen (==0.9.0)", "flask-babel (==1.0.0)", "flask-multistatic (==1.0)", "flask (==1.1.1)", "funcsigs (==1.0.2)", "idna (==2.10)", "itsdangerous (==1.1.0)", "jinja2 (==2.10.1)", "lxml (==4.6.3)", "mako (==1.1.5)", "markdown (==3.4.1)", "markupsafe (==1.1.1)", "nose (==1.3.7)", "passlib (==1.6.5)", "polib (==1.0.7)", "psycopg2 (==2.9.3)", "pyjwt (==1.7.1)", "pysolr (==3.6.0)", "python-dateutil (==2.8.2)", "python-editor (==1.0.4)", "python-magic (==0.4.15)", "pytz (==2016.7)", "pyutilib (==5.7.1)", "pyyaml (==5.4.1)", "redis (==3.5.3)", "repoze.lru (==0.7)", "repoze.who (==2.3)", "requests (==2.25.1)", "routes (==1.13)", "rq (==1.0)", "shutilwhich (==1.1.0)", "simplejson (==3.10.0)", "six (==1.16.0)", "sqlalchemy (==1.3.5)", "sqlparse (==0.3.0)", "tzlocal (==1.3)", "unicodecsv (==0.14.1)", "urllib3 (==1.26.6)", "watchdog (==2.1.5)", "webassets (==0.12.1)", "webencodings (==0.5.1)", "webob (==1.8.7)", "werkzeug[watchdog] (==1.0.0)", "zope.interface (==4.3.2)"]
+requirements-py2 = ["alembic (==1.0.0)", "babel (==2.7.0)", "beaker (==1.10.1)", "bleach (==3.1.4)", "certifi (==2019.3.9)", "chardet (==3.0.4)", "click (==7.1.2)", "decorator (==4.4.0)", "dominate (==2.4.0)", "fanstatic (==0.12)", "flask-babel (==0.11.2)", "Flask (==1.1.1)", "flask-multistatic (==1.0)", "feedgen (==0.9.0)", "formencode (==1.3.1)", "funcsigs (==1.0.2)", "future (==0.18.2)", "idna (==2.8)", "itsdangerous (==1.1.0)", "jinja2 (==2.10.1)", "PyJWT (==1.7.1)", "lxml (==4.4.2)", "mako (==1.0.9)", "markdown (==2.6.7)", "markupsafe (==1.1.1)", "nose (==1.3.7)", "passlib (==1.6.5)", "paste (==1.7.5.1)", "pastedeploy (==2.0.1)", "pastescript (==2.0.2)", "pbr (==5.2.0)", "polib (==1.0.7)", "psycopg2 (==2.8.6)", "pygments (==2.3.1)", "pylons (==0.9.7)", "pysolr (==3.6.0)", "python-dateutil (==2.8.0)", "python2-secrets (==1.0.5)", "python-editor (==1.0.4)", "python-magic (==0.4.15)", "pytz (==2016.7)", "PyUtilib (==5.7.1)", "pyyaml (==5.3.1)", "redis (==3.2.1)", "repoze.lru (==0.7)", "repoze.who-friendlyform (==1.0.8)", "repoze.who (==2.3)", "requests (==2.22.0)", "routes (==1.13)", "rq (==1.0)", "simplejson (==3.10.0)", "six (==1.12.0)", "sqlalchemy-migrate (==0.12.0)", "sqlalchemy (==1.3.5)", "sqlparse (==0.3.0)", "tempita (==0.5.2)", "tzlocal (==1.3)", "unicodecsv (==0.14.1)", "urllib3 (==1.25.8)", "watchdog (==0.10.2)", "webassets (==0.12.1)", "webencodings (==0.5.1)", "weberror (==0.13.1)", "webhelpers (==1.3)", "webob (==1.0.8)", "webtest (==1.4.3)", "werkzeug (==0.15.5)", "zope.interface (==4.3.2)"]
 setuptools = ["setuptools (==44.1.0)"]
 
 [package.source]
 type = "git"
 url = "https://github.com/ckan/ckan.git"
-reference = "ckan-2.9.5"
-resolved_reference = "65af260bef26ea99981597f872d39da0a3f4f3f9"
+reference = "ckan-2.9.9"
+resolved_reference = "13c6d752e86f0e3501f953a9fdde15d038bad87b"
 
 [[package]]
 name = "ckanapi"
@@ -241,7 +241,7 @@ develop = false
 type = "git"
 url = "https://github.com/datopian/ckanext-datajson.git"
 reference = "dev/py3-upgrade"
-resolved_reference = "5e96345e8f95fc092a1a4893b0de67f939977599"
+resolved_reference = "013a9722d0ee375608a083a1721ef875551101cc"
 
 [[package]]
 name = "ckanext-deadoralive"
@@ -1198,22 +1198,22 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
 name = "pyasn1"
-version = "0.4.8"
-description = "ASN.1 types and codecs"
+version = "0.5.0"
+description = "Pure-Python implementation of ASN.1 types and DER/BER/CER codecs (X.208)"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 
 [[package]]
 name = "pyasn1-modules"
-version = "0.2.8"
-description = "A collection of ASN.1-based protocols modules."
+version = "0.3.0"
+description = "A collection of ASN.1-based protocols modules"
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,>=2.7"
 
 [package.dependencies]
-pyasn1 = ">=0.4.6,<0.5.0"
+pyasn1 = ">=0.4.6,<0.6.0"
 
 [[package]]
 name = "pycparser"
@@ -1958,7 +1958,7 @@ testing = ["zope.event", "nose", "coverage"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.8"
-content-hash = "46d7007e637fb02eb852a7b48a7df5aaf66946210b2148e94220b582b4d69a95"
+content-hash = "86b7211f5eb71be91deef434db6157ce198f3035e2a82a96eaef0171fe5f989c"
 
 [metadata.files]
 alabaster = [
@@ -2563,34 +2563,12 @@ py = [
     {file = "py-1.11.0.tar.gz", hash = "sha256:51c75c4126074b472f746a24399ad32f6053d1b34b68d2fa41e558e6f4a98719"},
 ]
 pyasn1 = [
-    {file = "pyasn1-0.4.8-py2.4.egg", hash = "sha256:fec3e9d8e36808a28efb59b489e4528c10ad0f480e57dcc32b4de5c9d8c9fdf3"},
-    {file = "pyasn1-0.4.8-py2.5.egg", hash = "sha256:0458773cfe65b153891ac249bcf1b5f8f320b7c2ce462151f8fa74de8934becf"},
-    {file = "pyasn1-0.4.8-py2.6.egg", hash = "sha256:5c9414dcfede6e441f7e8f81b43b34e834731003427e5b09e4e00e3172a10f00"},
-    {file = "pyasn1-0.4.8-py2.7.egg", hash = "sha256:6e7545f1a61025a4e58bb336952c5061697da694db1cae97b116e9c46abcf7c8"},
-    {file = "pyasn1-0.4.8-py2.py3-none-any.whl", hash = "sha256:39c7e2ec30515947ff4e87fb6f456dfc6e84857d34be479c9d4a4ba4bf46aa5d"},
-    {file = "pyasn1-0.4.8-py3.1.egg", hash = "sha256:78fa6da68ed2727915c4767bb386ab32cdba863caa7dbe473eaae45f9959da86"},
-    {file = "pyasn1-0.4.8-py3.2.egg", hash = "sha256:08c3c53b75eaa48d71cf8c710312316392ed40899cb34710d092e96745a358b7"},
-    {file = "pyasn1-0.4.8-py3.3.egg", hash = "sha256:03840c999ba71680a131cfaee6fab142e1ed9bbd9c693e285cc6aca0d555e576"},
-    {file = "pyasn1-0.4.8-py3.4.egg", hash = "sha256:7ab8a544af125fb704feadb008c99a88805126fb525280b2270bb25cc1d78a12"},
-    {file = "pyasn1-0.4.8-py3.5.egg", hash = "sha256:e89bf84b5437b532b0803ba5c9a5e054d21fec423a89952a74f87fa2c9b7bce2"},
-    {file = "pyasn1-0.4.8-py3.6.egg", hash = "sha256:014c0e9976956a08139dc0712ae195324a75e142284d5f87f1a87ee1b068a359"},
-    {file = "pyasn1-0.4.8-py3.7.egg", hash = "sha256:99fcc3c8d804d1bc6d9a099921e39d827026409a58f2a720dcdb89374ea0c776"},
-    {file = "pyasn1-0.4.8.tar.gz", hash = "sha256:aef77c9fb94a3ac588e87841208bdec464471d9871bd5050a287cc9a475cd0ba"},
+    {file = "pyasn1-0.5.0-py2.py3-none-any.whl", hash = "sha256:87a2121042a1ac9358cabcaf1d07680ff97ee6404333bacca15f76aa8ad01a57"},
+    {file = "pyasn1-0.5.0.tar.gz", hash = "sha256:97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde"},
 ]
 pyasn1-modules = [
-    {file = "pyasn1-modules-0.2.8.tar.gz", hash = "sha256:905f84c712230b2c592c19470d3ca8d552de726050d1d1716282a1f6146be65e"},
-    {file = "pyasn1_modules-0.2.8-py2.4.egg", hash = "sha256:0fe1b68d1e486a1ed5473f1302bd991c1611d319bba158e98b106ff86e1d7199"},
-    {file = "pyasn1_modules-0.2.8-py2.5.egg", hash = "sha256:fe0644d9ab041506b62782e92b06b8c68cca799e1a9636ec398675459e031405"},
-    {file = "pyasn1_modules-0.2.8-py2.6.egg", hash = "sha256:a99324196732f53093a84c4369c996713eb8c89d360a496b599fb1a9c47fc3eb"},
-    {file = "pyasn1_modules-0.2.8-py2.7.egg", hash = "sha256:0845a5582f6a02bb3e1bde9ecfc4bfcae6ec3210dd270522fee602365430c3f8"},
-    {file = "pyasn1_modules-0.2.8-py2.py3-none-any.whl", hash = "sha256:a50b808ffeb97cb3601dd25981f6b016cbb3d31fbf57a8b8a87428e6158d0c74"},
-    {file = "pyasn1_modules-0.2.8-py3.1.egg", hash = "sha256:f39edd8c4ecaa4556e989147ebf219227e2cd2e8a43c7e7fcb1f1c18c5fd6a3d"},
-    {file = "pyasn1_modules-0.2.8-py3.2.egg", hash = "sha256:b80486a6c77252ea3a3e9b1e360bc9cf28eaac41263d173c032581ad2f20fe45"},
-    {file = "pyasn1_modules-0.2.8-py3.3.egg", hash = "sha256:65cebbaffc913f4fe9e4808735c95ea22d7a7775646ab690518c056784bc21b4"},
-    {file = "pyasn1_modules-0.2.8-py3.4.egg", hash = "sha256:15b7c67fabc7fc240d87fb9aabf999cf82311a6d6fb2c70d00d3d0604878c811"},
-    {file = "pyasn1_modules-0.2.8-py3.5.egg", hash = "sha256:426edb7a5e8879f1ec54a1864f16b882c2837bfd06eee62f2c982315ee2473ed"},
-    {file = "pyasn1_modules-0.2.8-py3.6.egg", hash = "sha256:cbac4bc38d117f2a49aeedec4407d23e8866ea4ac27ff2cf7fb3e5b570df19e0"},
-    {file = "pyasn1_modules-0.2.8-py3.7.egg", hash = "sha256:c29a5e5cc7a3f05926aff34e097e84f8589cd790ce0ed41b67aed6857b26aafd"},
+    {file = "pyasn1_modules-0.3.0-py2.py3-none-any.whl", hash = "sha256:d3ccd6ed470d9ffbc716be08bd90efbd44d0734bc9303818f7336070984a162d"},
+    {file = "pyasn1_modules-0.3.0.tar.gz", hash = "sha256:5bd01446b736eb9d31512a30d46c1ac3395d676c6f3cafa4c03eb54b9925631c"},
 ]
 pycparser = [
     {file = "pycparser-2.21-py2.py3-none-any.whl", hash = "sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9"},
