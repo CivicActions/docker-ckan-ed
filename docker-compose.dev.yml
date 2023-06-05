@@ -21,6 +21,17 @@ services:
       - backend
     depends_on:
       - db
+      - mailhog
+
+  mailhog:
+    container_name: mailhog
+    image: mailhog/mailhog
+    ports:
+      - "1025:1025"
+      - "8025:8025"
+    networks:
+      - frontend
+      - backend
 
   #datapusher:
   #  container_name: datapusher

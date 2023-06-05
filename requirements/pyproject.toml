@@ -7,7 +7,7 @@ authors = ["Your Name <you@example.com>"]
 [tool.poetry.dependencies]
 python = "3.6.8"
 
-ckan = {git = "https://github.com/ckan/ckan.git", tag = "ckan-2.9.5"}
+ckan = {git = "https://github.com/ckan/ckan.git", tag = "ckan-2.9.9"}
 
 # Ckan Extensions
 ckanext-datajson = {git = "https://github.com/datopian/ckanext-datajson.git", branch = "dev/py3-upgrade"}

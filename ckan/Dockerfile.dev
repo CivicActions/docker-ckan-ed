@@ -84,7 +84,7 @@ RUN cd ${SRC_DIR}/ckan && \
 RUN ckan generate config ${CKAN_INI} && \
     ckan config-tool ${CKAN_INI} "ckan.plugins = ${CKAN__PLUGINS}" && \
     ckan config-tool ${CKAN_INI} "ckan.site_url = ${CKAN__SITE_URL}" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.idp_metadata.remote_url = https://idp.int.identitysandbox.gov/api/saml/metadata2022" && \
+    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.idp_metadata.remote_url = https://idp.int.identitysandbox.gov/api/saml/metadata2023" && \
     ckan config-tool ${CKAN_INI} "ckanext.saml2auth.user_firstname = first_name" && \
     ckan config-tool ${CKAN_INI} "ckanext.saml2auth.user_lastname = last_name" && \
     ckan config-tool ${CKAN_INI} "ckanext.saml2auth.user_email = email" && \
