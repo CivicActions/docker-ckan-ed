@@ -337,8 +337,8 @@ pysaml2 = ">=6.5.1"
 [package.source]
 type = "git"
 url = "https://github.com/datopian/ckanext-saml2auth.git"
-reference = "a939569f3fdb73b4535874deb40e2bf0d5797620"
-resolved_reference = "a939569f3fdb73b4535874deb40e2bf0d5797620"
+reference = "4a7f8268ea9a48696e4fdb0ef44e58973970a876"
+resolved_reference = "4a7f8268ea9a48696e4fdb0ef44e58973970a876"
 
 [[package]]
 name = "ckanext-showcase"
@@ -1958,7 +1958,7 @@ testing = ["zope.event", "nose", "coverage"]
 [metadata]
 lock-version = "1.1"
 python-versions = "3.6.8"
-content-hash = "86b7211f5eb71be91deef434db6157ce198f3035e2a82a96eaef0171fe5f989c"
+content-hash = "e7586d7e2af55bb80b0cd2ed9c9769af803eb9149ed7283ef0d9b44a5108a6df"
 
 [metadata.files]
 alabaster = [
