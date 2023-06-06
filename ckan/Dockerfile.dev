@@ -83,21 +83,7 @@ RUN cd ${SRC_DIR}/ckan && \
 # Create and update CKAN config
 RUN ckan generate config ${CKAN_INI} && \
     ckan config-tool ${CKAN_INI} "ckan.plugins = ${CKAN__PLUGINS}" && \
-    ckan config-tool ${CKAN_INI} "ckan.site_url = ${CKAN__SITE_URL}" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.idp_metadata.remote_url = https://idp.int.identitysandbox.gov/api/saml/metadata2023" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.user_firstname = first_name" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.user_lastname = last_name" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.user_email = email" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.key_file_path = /srv/app/private.pem" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.cert_file_path = /srv/app/public.crt" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.allow_unknown_attributes = true" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.sp.name_id_format = urn:oasis:names:tc:saml:2.0:nameid-format:persistent urn:oasis:names:tc:saml:2.0:nameid-format:transient urn:oasis:names:tc:saml:2.0:nameid-format:emailaddress" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.entity_id = urn:gov:gsa:SAML:2.0.profiles:sp:sso:department_of_education:open_data_platform" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.want_response_signed = false" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.want_assertions_signed = false" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.want_assertions_or_response_signed = true" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.enable_ckan_internal_login = true" && \
-    ckan config-tool ${CKAN_INI} "ckanext.saml2auth.requested_authn_context = http://idmanagement.gov/ns/assurance/ial/1 http://idmanagement.gov/ns/requested_attributes?ReqAttr=email,first_name,last_name"
+    ckan config-tool ${CKAN_INI} "ckan.site_url = ${CKAN__SITE_URL}"
 
 # Create a local user and group to run the app
 RUN addgroup -g 92 -S ckan && \
