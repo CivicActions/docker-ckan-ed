@@ -81,3 +81,27 @@ and the file `requirements-noh.txt` will contain the editable source packages an
 3. Commit `ckan/requirements.txt`, `ckan/requirements-noh.txt`, `ckan/requirements-dev.txt`, `requirements/pyproject.toml`, and `requirements/poetry.lock`.
 
 > **NOTE:** `make update-dependencies` and all `poetry` commands should be run with `poetry==1.1.14` (earlier/later versions _might_ work—haven't been tested), installed within a **Python 3.6.8** environment using `pip==21.3.1`.
+
+# Development
+
+## Setup
+
+To run the environment, run:
+
+    make setup
+
+After the environment builds and attempts to start up, it will get stuck trying to call `edcli`. This is because `ckanext-ed` is not enabled yet. CKAN will fail to initialize its own DB if the extension is enabled. Once you get stuck there, you can ctrl-c out of the command. Then add the following plugins to the `.env` file _between_ (this is important) `datajson_harvest` and `resource_proxy`:
+
+```
+ed edharvest eddatajsonharvest ed_sources ed_stats ed_hierarchy_display ed_hierarchy_form documentation ed_collections ed_data_explorers ed_format_translator ed_resource_approval
+```
+
+The plugins should look like this:
+
+```
+CKAN__PLUGINS=saml2auth datastore xloader dataexplorer_view dataexplorer_table_view dataexplorer_chart_view dataexplorer_map_view ckan_harvester datajson_harvest ed edharvest eddatajsonharvest ed_sources ed_stats ed_hierarchy_display ed_hierarchy_form documentation ed_collections ed_data_explorers ed_format_translator ed_resource_approvalresource_proxy deadoralive pages googleanalytics showcase envvars
+```
+
+Finally, you can run the following to get the environment up and running:
+
+    make up
