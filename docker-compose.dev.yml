@@ -2,6 +2,7 @@ version: "3"
 
 services:
   ckan-dev:
+    container_name: ed-dev
     build:
       context: ckan/
       dockerfile: Dockerfile.dev
@@ -24,7 +25,7 @@ services:
       - mailhog
 
   mailhog:
-    container_name: mailhog
+    container_name: mailhog-ed-dev
     image: mailhog/mailhog
     ports:
       - "1025:1025"
@@ -33,18 +34,8 @@ services:
       - frontend
       - backend
 
-  #datapusher:
-  #  container_name: datapusher
-  #  build:
-  #    context: datapusher/
-  #  ports:
-  #    - "8800:8800"
-  #  networks:
-  #    - frontend
-  #    - backend
-
   db:
-    container_name: db
+    container_name: db-ed-dev
     env_file:
       - .dev.env
     build:
@@ -56,13 +47,8 @@ services:
     networks:
       - backend
 
-  #solr:
-  #  container_name: solr
-  #  build:
-  #    context: solr/
-
   solr:
-    container_name: solr
+    container_name: solr-ed-dev
     image: solr:8.11.1
     networks:
       - backend
@@ -76,7 +62,7 @@ services:
       - ${PWD}/solr8/ckan_init_solr.sh:/docker-entrypoint-initdb.d/ckan_init_solr.sh
 
   redis:
-    container_name: redis
+    container_name: redis-ed-dev
     image: redis:alpine
     networks:
       - backend
