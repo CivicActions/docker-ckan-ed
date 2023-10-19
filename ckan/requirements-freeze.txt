@@ -15,7 +15,7 @@ chardet==4.0.0
 -e git+https://github.com/ckan/ckan.git@6731c5a821a6a5f4bdaa20f4e793e0b6ba44f823#egg=ckan
 -e git+https://github.com/okfn/ckanext-envvars.git@8602376a92a77b4f2d41763b6823d041469fa08e#egg=ckanext_envvars
 click==7.1.2
-cookiecutter==1.7.0
+cookiecutter==2.1.1
 coverage==5.5
 coveralls==3.2.0
 decorator==5.1.0
