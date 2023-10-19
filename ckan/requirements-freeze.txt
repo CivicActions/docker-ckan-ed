@@ -115,7 +115,7 @@ wcwidth==0.2.5
 webassets==0.12.1
 webencodings==0.5.1
 WebOb==1.8.7
-Werkzeug==1.0.0
+Werkzeug==2.2.3
 whichcraft==0.6.1
 zipp==3.6.0
 zope.interface==4.3.2
