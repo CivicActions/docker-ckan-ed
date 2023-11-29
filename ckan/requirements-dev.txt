@@ -437,9 +437,9 @@ parso==0.7.1; python_version >= "3.6" and python_full_version < "3.0.0" or pytho
 passlib==1.6.5 \
     --hash=sha256:ad631a58dc8abeb0f48016c13f4b3b0f3a7b1045a8cb3c61dd15e2d95b45c472 \
     --hash=sha256:a83d34f53dc9b17aa42c9a35c3fbcc5120f3fcb07f7f8721ec45e6a27be347fc
-pexpect==4.8.0; sys_platform != "win32" and python_version >= "3.6" \
-    --hash=sha256:0b48a55dcb3c05f3329815901ea4fc1537514d6ba867a152b581d69ae3710937 \
-    --hash=sha256:fc65a43959d153d0114afe13997d439c22823a27cefceb5ff35c2178c6784c0c
+pexpect==4.9.0; sys_platform != "win32" and python_version >= "3.6" \
+    --hash=sha256:7236d1e080e4936be2dc3e326cec0af72acf9212a7e1d060210e70a47e253523 \
+    --hash=sha256:ee7d41123f3c9911050ea2c2dac107568dc43b2d3b0c7557a33212c398ead30f
 pickleshare==0.7.5; python_version >= "3.6" \
     --hash=sha256:9649af414d74d4df115d5d718f82acb59c9d418196b7b4290ed47a12ce62df56 \
     --hash=sha256:87683d47965c1da65cdacaf31c8441d12b8044cdec9aca500cd78fc2c683afca
@@ -503,9 +503,9 @@ py==1.11.0; python_version >= "3.6" and python_full_version < "3.0.0" or python_
 pyasn1-modules==0.3.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" \
     --hash=sha256:d3ccd6ed470d9ffbc716be08bd90efbd44d0734bc9303818f7336070984a162d \
     --hash=sha256:5bd01446b736eb9d31512a30d46c1ac3395d676c6f3cafa4c03eb54b9925631c
-pyasn1==0.5.0; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4" or python_version >= "3.6" and python_version < "4" and python_full_version >= "3.6.0" \
-    --hash=sha256:87a2121042a1ac9358cabcaf1d07680ff97ee6404333bacca15f76aa8ad01a57 \
-    --hash=sha256:97b7290ca68e62a832558ec3976f15cbf911bf5d7c7039d8b861c2a0ece69fde
+pyasn1==0.5.1; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4" or python_version >= "3.6" and python_version < "4" and python_full_version >= "3.6.0" \
+    --hash=sha256:4439847c58d40b1d0a573d07e3856e95333f1976294494c325775aeca506eb58 \
+    --hash=sha256:6d391a96e59b23130a5cfa74d6fd7f388dbbe26cc8f1edf39fdddf08d9d6676c
 pycparser==2.21; python_version >= "3.6" and python_full_version < "3.0.0" and python_version < "4" or python_version >= "3.6" and python_version < "4" and python_full_version >= "3.4.0" \
     --hash=sha256:8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9 \
     --hash=sha256:e644fdec12f7872f86c58ff790da456218b10f863970249516d60a5eaca77206
@@ -719,9 +719,9 @@ watchdog==2.1.5; python_version >= "3.6" \
     --hash=sha256:eab14adfc417c2c983fbcb2c73ef3f28ba6990d1fff45d1180bf7e38bda0d98d \
     --hash=sha256:a2888a788893c4ef7e562861ec5433875b7915f930a5a7ed3d32c048158f1be5 \
     --hash=sha256:5563b005907613430ef3d4aaac9c78600dd5704e84764cb6deda4b3d72807f09
-wcwidth==0.2.6; python_full_version >= "3.6.2" and python_version >= "3.6" \
-    --hash=sha256:795b138f6875577cd91bba52baf9e445cd5118fd32723b460e30a0af30ea230e \
-    --hash=sha256:a5220780a404dbe3353789870978e472cfe477761f06ee55077256e509b156d0
+wcwidth==0.2.12; python_full_version >= "3.6.2" and python_version >= "3.6" \
+    --hash=sha256:f26ec43d96c8cbfed76a5075dac87680124fa84e0855195a6184da9c187f133c \
+    --hash=sha256:f01c104efdf57971bcb756f054dd58ddec5204dd15fa31d6503ea57947d97c02
 webassets==0.12.1 \
     --hash=sha256:e7d9c8887343123fd5b32309b33167428cb1318cdda97ece12d0907fd69d38db
 webencodings==0.5.1 \
