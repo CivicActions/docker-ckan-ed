@@ -3,7 +3,6 @@
 -e git+https://github.com/datopian/ckanext-deadoralive.git@3259828d4bbe6d4ec6889bfd50c8b4a40d0d023f#egg=ckanext-deadoralive
 -e git+https://github.com/datopian/deadoralive.git@d647dfc29e5ff9e614edfcaba92a61a3a962021c#egg=deadoralive
 -e git+https://github.com/okfn/ckanext-envvars.git@8602376a92a77b4f2d41763b6823d041469fa08e#egg=ckanext-envvars
--e git+https://github.com/datopian/ckanext-googleanalytics.git@a5a8c0f47d3a520317d29c4cb27b002ddd3a6df6#egg=ckanext-googleanalytics
 -e git+https://github.com/ckan/ckanext-harvest.git@8874175bc9c09c40ad822df2101ce14fb957f58f#egg=ckanext-harvest
 -e git+https://github.com/ckan/ckanext-showcase.git@17a5a3fad4d4a0d51e6f04caf757f13616683801#egg=ckanext-showcase
 -e git+https://github.com/ckan/ckanext-pages.git@b9f7e49db5c036c602b1bff7050e91eccdc00b53#egg=ckanext-pages

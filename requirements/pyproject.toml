@@ -14,7 +14,6 @@ ckanext-datajson = {git = "https://github.com/datopian/ckanext-datajson.git", br
 ckanext-deadoralive = {git = "https://github.com/datopian/ckanext-deadoralive.git", branch = "dev/python3"}
 deadoralive = {git = "https://github.com/datopian/deadoralive.git", branch = "ed-dev/python3.6"}
 ckanext-envvars = {git = "https://github.com/okfn/ckanext-envvars.git", rev = "8602376a92a77b4f2d41763b6823d041469fa08e"}
-ckanext-googleanalytics = {git = "https://github.com/datopian/ckanext-googleanalytics.git", branch = "ed-2.9"}
 ckanext-harvest = {git = "https://github.com/ckan/ckanext-harvest.git", tag = "v1.4.0"}
 ckanext-showcase = {git = "https://github.com/ckan/ckanext-showcase.git", tag = "v1.5.0"}
 ckanext-pages = {git = "https://github.com/ckan/ckanext-pages.git", rev = "b9f7e49db5c036c602b1bff7050e91eccdc00b53"}
@@ -90,11 +89,6 @@ beautifulsoup4 = "4.5.1"
 jdcal = "1.4.1"
 openpyxl = "2.6.4"
 xlrd = "2.0.1"
-
-# ckanext-googleanalytics
-gdata="2.0.18"
-google-api-python-client="1.6.7"
-pyOpenSSL="18.0.0"
 
 # ckanext-harvest
 ckantoolkit="0.0.7"
