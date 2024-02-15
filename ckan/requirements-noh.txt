@@ -1,5 +1,5 @@
 -e git+https://github.com/ckan/ckan.git@13c6d752e86f0e3501f953a9fdde15d038bad87b#egg=ckan
--e git+https://github.com/datopian/ckanext-datajson.git@fb41170b4fbd8fe1e0b68c0dbbc8e93f00812cea#egg=ckanext-datajson
+-e git+https://github.com/datopian/ckanext-datajson.git@353d47842e5ccba564254fa864e1ba08e7473c18#egg=ckanext-datajson
 -e git+https://github.com/datopian/ckanext-deadoralive.git@3259828d4bbe6d4ec6889bfd50c8b4a40d0d023f#egg=ckanext-deadoralive
 -e git+https://github.com/datopian/deadoralive.git@d647dfc29e5ff9e614edfcaba92a61a3a962021c#egg=deadoralive
 -e git+https://github.com/okfn/ckanext-envvars.git@8602376a92a77b4f2d41763b6823d041469fa08e#egg=ckanext-envvars

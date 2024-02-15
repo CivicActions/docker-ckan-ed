@@ -110,6 +110,7 @@ ADD 2.9/wsgi.py ${APP_DIR}
 # Create entrypoint directory for children image scripts
 # ONBUILD RUN mkdir /docker-entrypoint.d
 COPY docker-entrypoint.d/* /docker-entrypoint.d/
+COPY supervisor.d/* /etc/supervisord.d/
 
 RUN chown ckan -R ${APP_DIR}
 
