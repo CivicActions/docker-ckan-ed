@@ -7,7 +7,7 @@ ENV CKAN_INI=${APP_DIR}/ckan.ini
 ENV PIP_SRC=${SRC_DIR}
 ENV CKAN_STORAGE_PATH=/var/lib/ckan
 # CKAN version to build
-ENV GIT_BRANCH=ckan-2.9.5
+ENV GIT_BRANCH=ckan-2.9.9
 # Customize these on the .env file if needed
 ENV CKAN_SITE_URL=http://ckan-dev:5000
 ENV CKAN__PLUGINS envvars
@@ -110,6 +110,7 @@ ADD 2.9/wsgi.py ${APP_DIR}
 # Create entrypoint directory for children image scripts
 # ONBUILD RUN mkdir /docker-entrypoint.d
 COPY docker-entrypoint.d/* /docker-entrypoint.d/
+COPY supervisor.d/* /etc/supervisord.d/
 
 RUN chown ckan -R ${APP_DIR}
 
