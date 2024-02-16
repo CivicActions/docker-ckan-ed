@@ -1,4 +1,0 @@
-curl -X POST http://ckan-dev:5000/api/3/action/package_relationship_create \                     (v3.9.9.1) docker-ckan-ed-clean
--H "Content-Type: application/json" \
--H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmT2xqbWtqS2pvV3RGMUF3NmJQR1ZzOC1jeWZQcFJtOHZoblBMMGxfNnItMGxRaHVncU5zcTNmUnJwV2dBXzFNQ3NJMk5mTmVHQWc0cE5YViIsImlhdCI6MTcwNzQ5MzkyOX0.VwmDpQEdHPs6KrADlNSdW642aD_Zzxn-i-2oyNgRPmQ" \
--d '{"subject": "2011-12-english-language-instruction-program-enrollment-estimations-for-nation-and-by-stat", "object": "2011-12-english-language-instruction-program-enrollment-estimations-for-nation-and-by-stat"}' | json_pp
